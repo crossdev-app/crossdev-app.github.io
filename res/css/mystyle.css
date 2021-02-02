@@ -32,6 +32,11 @@ body header {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: head;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin: 10px 25px;
   padding: 0px 25px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -67,6 +72,8 @@ body header #nav a {
   margin: 0px 20px;
   padding: 5px 15px;
   color: #eee;
+  font-weight: 700;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
   border-radius: 25px;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
@@ -75,6 +82,18 @@ body header #nav a {
 body header #nav a:hover {
   background-color: #eee;
   color: #ff1a1a;
+  text-shadow: none;
+  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+body header #nav a#order {
+  background-color: #ff5858;
+}
+
+body header #nav a#order:hover {
+  background-color: #ff1a1a;
+  color: #eee;
 }
 
 body main {
