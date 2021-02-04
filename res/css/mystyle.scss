@@ -29,12 +29,13 @@ body {
 
   header {
     grid-area: head;
+    justify-self: center;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     margin: 10px 25px;
-    padding: 0px 25px;
+    padding: 0px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -60,7 +61,7 @@ body {
     #nav {
       a {
         margin: 0px 20px;
-        padding: 5px 15px;
+        padding: 5px 25px;
         color: #eee;
         font-weight: 700;
         text-shadow: 2px 2px 3px rgba($color: #000000, $alpha: 0.5);
@@ -87,6 +88,21 @@ body {
   }
   main {
     grid-area: main;
+
+    section {
+      height: 90vh;
+      background-color: royalblue;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #first-sect {
+      h1 {
+        font-family: "Bebas Neue", cursive;
+      }
+    }
   }
   footer {
     grid-area: foot;
