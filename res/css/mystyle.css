@@ -32,7 +32,6 @@ body header {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: head;
-  justify-self: center;
   position: fixed;
   top: 0;
   left: 0;
