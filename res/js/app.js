@@ -7,6 +7,8 @@ let swtch = document.getElementById('switch');
 let boxSW = document.getElementById('boxSW');
 let bulb = document.getElementById('bulb');
 let lightning  = document.getElementById('lightning');
+let word1 = document.getElementById('word1');
+let word2 = document.getElementById('word2');
 
 
 
@@ -51,6 +53,14 @@ function bulbStart(){
         bulb.setAttribute('src', 'res/img/bulb_on.png');
         lightning.style.display = 'block';
     }, 1500);
+    setTimeout(() => {
+        showText();
+    }, 1700);
+}
+
+function showText() {
+    word1.style.transform = 'TranslateX(0)';
+    word2.style.transform = 'TranslateX(0)';
 }
 
 // Execution

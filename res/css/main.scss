@@ -178,5 +178,40 @@ body {
         }
       }
     }
+
+    .text-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: sans-serif;
+      color: #fff;
+
+      .txt-box {
+        height: 100px;
+        margin: 5px;
+        display: flex;
+        overflow-y: hidden;
+
+        #word1 {
+          height: max-content;
+          font-size: 4.5rem;
+          font-family: sans-serif;
+          font-weight: 900;
+          align-self: flex-end;
+          transform: translateY(100%);
+          transition: all 0.5s ease-out;
+        }
+
+        #word2 {
+          height: max-content;
+          font-family: sans-serif;
+          font-size: 4rem;
+          font-weight: normal;
+          transform: translateY(-100%);
+          transition: all 0.5s ease-out;
+        }
+      }
+    }
   }
 }
