@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&family=Roboto&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -7,6 +8,10 @@
 
 body {
   background: #141414;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 body .box-switch {
@@ -164,6 +169,20 @@ body .box-home {
   z-index: -1;
 }
 
+body .box-home .box-brand {
+  width: 0px;
+  position: absolute;
+  top: 5vh;
+  left: 5vw;
+  overflow-x: hidden;
+  -webkit-transition: width 0.5s ease-in-out;
+  transition: width 0.5s ease-in-out;
+}
+
+body .box-home .box-brand img {
+  width: 200px;
+}
+
 body .box-home .lamp {
   margin: auto;
   height: 100vh;
@@ -190,7 +209,6 @@ body .box-home .lamp .fiting {
   height: 15px;
   width: 40px;
   background-color: #282828;
-  cursor: pointer;
 }
 
 body .box-home .lamp .trapezoid {
@@ -227,11 +245,12 @@ body .box-home .text-center {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   font-family: sans-serif;
-  color: #fff;
 }
 
 body .box-home .text-center .txt-box {
-  height: 100px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
   margin: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -244,7 +263,7 @@ body .box-home .text-center .txt-box #word1 {
   height: -moz-max-content;
   height: max-content;
   font-size: 4.5rem;
-  font-family: sans-serif;
+  font-family: "Roboto", cursive;
   font-weight: 900;
   -ms-flex-item-align: end;
       align-self: flex-end;
@@ -252,18 +271,63 @@ body .box-home .text-center .txt-box #word1 {
           transform: translateY(100%);
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
+  color: #ddd;
 }
 
 body .box-home .text-center .txt-box #word2 {
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
-  font-family: sans-serif;
+  font-family: "Roboto";
   font-size: 4rem;
-  font-weight: normal;
+  font-weight: 500;
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%);
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
+  color: #aaa;
+}
+
+body .box-home .find-me {
+  bottom: 3vh;
+  left: 5vw;
+  width: 300px;
+  position: absolute;
+}
+
+body .box-home .find-me #subTitle {
+  font-family: "Nunito", sans-serif;
+  color: #aaa;
+  font-weight: 700;
+  margin-bottom: 10px;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+body .box-home .find-me .box-icon a {
+  text-decoration: none;
+}
+
+body .box-home .find-me .box-icon a .soc-icon {
+  margin-right: 8px;
+  height: 30px;
+  width: 30px;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+body .box-home .find-me .box-icon a .w-hover {
+  margin-right: 8px;
+  height: 30px;
+  width: 30px;
+  opacity: 0.2;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+body .box-home .find-me .box-icon a .w-hover:hover {
+  opacity: 1;
 }
 /*# sourceMappingURL=main.css.map */

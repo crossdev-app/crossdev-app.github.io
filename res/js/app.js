@@ -6,9 +6,12 @@ let isON = false;
 let swtch = document.getElementById('switch');
 let boxSW = document.getElementById('boxSW');
 let bulb = document.getElementById('bulb');
-let lightning  = document.getElementById('lightning');
+let lightning = document.getElementById('lightning');
 let word1 = document.getElementById('word1');
 let word2 = document.getElementById('word2');
+let brand = document.getElementById('brand');
+let findMeTXT = document.getElementById('subTitle');
+let socIcon = document.querySelectorAll('.soc-icon');
 
 
 
@@ -32,7 +35,7 @@ function disapear(obj) {
     bulbStart();
 }
 
-function bulbStart(){
+function bulbStart() {
     setTimeout(() => {
         bulb.setAttribute('src', 'res/img/bulb_on.png');
         lightning.style.display = 'block';
@@ -56,12 +59,27 @@ function bulbStart(){
     setTimeout(() => {
         showText();
     }, 1700);
+    setTimeout(() => {
+        socIcon[0].classList.add('w-hover');
+    }, 1800);
+    setTimeout(() => {
+        socIcon[1].classList.add('w-hover');
+    }, 2000);
+    setTimeout(() => {
+        socIcon[2].classList.add('w-hover');
+    }, 2200);
+    setTimeout(() => {
+        socIcon[3].classList.add('w-hover');
+    }, 2400);
 }
 
 function showText() {
     word1.style.transform = 'TranslateX(0)';
     word2.style.transform = 'TranslateX(0)';
+    brand.style.width = '200px';
+    findMeTXT.style.opacity = '1';
+
 }
 
 // Execution
-btnOn.addEventListener('click', ()=> pushOn());
+btnOn.addEventListener('click', () => pushOn());
