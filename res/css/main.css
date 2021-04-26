@@ -8,10 +8,23 @@
 
 body {
   background: #141414;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  background-image: url("../img/bg/main_bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+body .just-bg {
+  height: 100vh;
+  width: 100vw;
+  background-color: #141414;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -10;
+  -webkit-transition: all 1.5s ease-in-out;
+  transition: all 1.5s ease-in-out;
 }
 
 body .box-switch {
@@ -27,6 +40,7 @@ body .box-switch {
       -ms-flex-align: center;
           align-items: center;
   background-color: rgba(20, 20, 20, 0.8);
+  z-index: 1;
 }
 
 body .box-switch #switch {

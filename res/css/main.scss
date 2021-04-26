@@ -8,7 +8,22 @@
 
 body {
   background: rgb(20, 20, 20);
-  user-select: none;
+  background-image: url("../img/bg/main_bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+
+  .just-bg {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(20, 20, 20);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -10;
+    transition: all 1.5s ease-in-out;
+  }
 
   .box-switch {
     height: 100vh;
@@ -17,6 +32,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: rgba(20, 20, 20, 0.8);
+    z-index: 1;
 
     #switch {
       height: 120px;
