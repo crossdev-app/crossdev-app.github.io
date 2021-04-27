@@ -8,23 +8,32 @@
 
 body {
   background: #141414;
-  background-image: url("../img/bg/main_bg.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 body .just-bg {
   height: 100vh;
   width: 100vw;
-  background-color: #141414;
+  background-image: url("../img/bg/main_bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   position: absolute;
   top: 0px;
   left: 0px;
   z-index: -10;
-  -webkit-transition: all 1.5s ease-in-out;
-  transition: all 1.5s ease-in-out;
+}
+
+body .just-bg .overlay {
+  height: 100vh;
+  width: 100vw;
+  -webkit-transition: opacity 1.5s ease-in;
+  transition: opacity 1.5s ease-in;
+  background-color: #141414;
+  opacity: 1;
 }
 
 body .box-switch {
@@ -337,11 +346,52 @@ body .box-home .find-me .box-icon a .w-hover {
   height: 30px;
   width: 30px;
   opacity: 0.2;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 body .box-home .find-me .box-icon a .w-hover:hover {
   opacity: 1;
+}
+
+body .box-home .v-menu {
+  height: 100vh;
+  width: 80px;
+  position: absolute;
+  top: 0px;
+  right: 1vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .box-home .v-menu .menu-list {
+  -webkit-transform: rotateZ(-90deg);
+          transform: rotateZ(-90deg);
+  width: 10px;
+  padding-bottom: 8px;
+  border-bottom: 3px solid #49a26f;
+  color: rgba(136, 136, 136, 0.4);
+  font-family: "Nunito", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+}
+
+body .box-home .v-menu .menu-list:hover {
+  color: rgba(136, 136, 136, 0.9);
 }
 /*# sourceMappingURL=main.css.map */

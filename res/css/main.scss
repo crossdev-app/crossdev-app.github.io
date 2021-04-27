@@ -8,21 +8,27 @@
 
 body {
   background: rgb(20, 20, 20);
-  background-image: url("../img/bg/main_bg.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
+  user-select: none;
 
   .just-bg {
     height: 100vh;
     width: 100vw;
-    background-color: rgb(20, 20, 20);
+    background-image: url("../img/bg/main_bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     position: absolute;
     top: 0px;
     left: 0px;
     z-index: -10;
-    transition: all 1.5s ease-in-out;
+
+    .overlay {
+      height: 100vh;
+      width: 100vw;
+      transition: opacity 1.5s ease-in;
+      background-color: rgb(20, 20, 20);
+      opacity: 1;
+    }
   }
 
   .box-switch {
@@ -276,12 +282,44 @@ body {
             height: 30px;
             width: 30px;
             opacity: 0.2;
-            transition: all 0.3s ease-in-out;
+            transition: all 0.2s ease-in-out;
 
             &:hover {
               opacity: 1;
             }
           }
+        }
+      }
+    }
+
+    .v-menu {
+      height: 100vh;
+      width: 80px;
+      position: absolute;
+      top: 0px;
+      right: 1vw;
+      // background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+
+      .menu-list {
+        transform: rotateZ(-90deg);
+        width: 10px;
+        padding-bottom: 8px;
+        border-bottom: 3px solid #49a26f;
+        color: rgba(136, 136, 136, 0.4);
+        font-family: "Nunito", sans-serif;
+        font-size: 1.3rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        white-space: nowrap;
+        cursor: pointer;
+        transition: color 0.1s ease-in-out;
+
+        &:hover {
+          color: rgba(136, 136, 136, 0.9);
         }
       }
     }

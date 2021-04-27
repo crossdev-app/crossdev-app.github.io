@@ -12,7 +12,7 @@ let word2 = document.getElementById('word2');
 let brand = document.getElementById('brand');
 let findMeTXT = document.getElementById('subTitle');
 let socIcon = document.querySelectorAll('.soc-icon');
-let justBG = document.querySelector('.just-bg');
+let overlayBG = document.querySelector('.overlay');
 
 
 
@@ -79,7 +79,7 @@ function showText() {
     word2.style.transform = 'TranslateX(0)';
     brand.style.width = '200px';
     findMeTXT.style.opacity = '1';
-    justBG.style.opacity = '0.9';
+    overlayBG.style.opacity = '0.9';
 
 }
 
