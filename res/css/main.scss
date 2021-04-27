@@ -174,6 +174,7 @@ body {
       display: flex;
       flex-direction: column;
       align-items: center;
+      transition: transform 0.5s ease-in-out;
 
       .hanger {
         height: 100px;
@@ -220,6 +221,7 @@ body {
       left: 50%;
       transform: translate(-50%, -50%);
       font-family: sans-serif;
+      transition: transform 0.5s ease-in-out;
 
       .txt-box {
         height: max-content;
@@ -278,9 +280,6 @@ body {
           }
 
           .w-hover {
-            margin-right: 8px;
-            height: 30px;
-            width: 30px;
             opacity: 0.2;
             transition: all 0.2s ease-in-out;
 
@@ -298,30 +297,41 @@ body {
       position: absolute;
       top: 0px;
       right: 1vw;
-      // background-color: #fff;
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
+      justify-content: space-evenly;
       align-items: center;
+      overflow: hidden;
 
       .menu-list {
-        transform: rotateZ(-90deg);
-        width: 10px;
+        transform: rotateZ(-90deg) translateY(100px);
         padding-bottom: 8px;
+        width: 10px;
         border-bottom: 3px solid #49a26f;
-        color: rgba(136, 136, 136, 0.4);
+        color: rgba(136, 136, 136, 0.5);
         font-family: "Nunito", sans-serif;
         font-size: 1.3rem;
         font-weight: 700;
-        letter-spacing: 0.5px;
+        letter-spacing: 1px;
         white-space: nowrap;
         cursor: pointer;
-        transition: color 0.1s ease-in-out;
+        transition: color 0.1s ease-in-out, transform 1s ease-in-out;
 
         &:hover {
           color: rgba(136, 136, 136, 0.9);
         }
       }
+    }
+
+    .container-info {
+      height: 5px;
+      width: 0;
+      background-color: #222;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transition: all 0.3s ease-in-out;
+      overflow: hidden;
     }
   }
 }

@@ -220,6 +220,10 @@ body .box-home .lamp {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
 }
 
 body .box-home .lamp .hanger {
@@ -268,6 +272,10 @@ body .box-home .text-center {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   font-family: sans-serif;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
 }
 
 body .box-home .text-center .txt-box {
@@ -342,9 +350,6 @@ body .box-home .find-me .box-icon a .soc-icon {
 }
 
 body .box-home .find-me .box-icon a .w-hover {
-  margin-right: 8px;
-  height: 30px;
-  width: 30px;
   opacity: 0.2;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
@@ -367,31 +372,47 @@ body .box-home .v-menu {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow: hidden;
 }
 
 body .box-home .v-menu .menu-list {
-  -webkit-transform: rotateZ(-90deg);
-          transform: rotateZ(-90deg);
-  width: 10px;
+  -webkit-transform: rotateZ(-90deg) translateY(100px);
+          transform: rotateZ(-90deg) translateY(100px);
   padding-bottom: 8px;
+  width: 10px;
   border-bottom: 3px solid #49a26f;
-  color: rgba(136, 136, 136, 0.4);
+  color: rgba(136, 136, 136, 0.5);
   font-family: "Nunito", sans-serif;
   font-size: 1.3rem;
   font-weight: 700;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
   white-space: nowrap;
   cursor: pointer;
-  -webkit-transition: color 0.1s ease-in-out;
-  transition: color 0.1s ease-in-out;
+  -webkit-transition: color 0.1s ease-in-out, -webkit-transform 1s ease-in-out;
+  transition: color 0.1s ease-in-out, -webkit-transform 1s ease-in-out;
+  transition: color 0.1s ease-in-out, transform 1s ease-in-out;
+  transition: color 0.1s ease-in-out, transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
 }
 
 body .box-home .v-menu .menu-list:hover {
   color: rgba(136, 136, 136, 0.9);
+}
+
+body .box-home .container-info {
+  height: 5px;
+  width: 0;
+  background-color: #222;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
 }
 /*# sourceMappingURL=main.css.map */

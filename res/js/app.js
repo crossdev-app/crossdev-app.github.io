@@ -13,6 +13,10 @@ let brand = document.getElementById('brand');
 let findMeTXT = document.getElementById('subTitle');
 let socIcon = document.querySelectorAll('.soc-icon');
 let overlayBG = document.querySelector('.overlay');
+let menuList = document.querySelectorAll('.menu-list');
+let contInfo = document.querySelector('.container-info');
+let lamp = document.querySelector('.lamp');
+let centerTextBox = document.querySelector('.text-center');
 
 
 
@@ -62,12 +66,15 @@ function bulbStart() {
     }, 1700);
     setTimeout(() => {
         socIcon[0].classList.add('w-hover');
+        menuList[0].style.transform = 'RotateZ(-90deg) TranslateY(0)';
     }, 1800);
     setTimeout(() => {
         socIcon[1].classList.add('w-hover');
+        menuList[1].style.transform = 'RotateZ(-90deg) TranslateY(0)';
     }, 2000);
     setTimeout(() => {
         socIcon[2].classList.add('w-hover');
+        menuList[2].style.transform = 'RotateZ(-90deg) TranslateY(0)';
     }, 2200);
     setTimeout(() => {
         socIcon[3].classList.add('w-hover');
@@ -80,8 +87,42 @@ function showText() {
     brand.style.width = '200px';
     findMeTXT.style.opacity = '1';
     overlayBG.style.opacity = '0.9';
+}
+
+function openCard() {
+    contInfo.style.width = '50vw';        
+    setTimeout(() => {
+        contInfo.style.height = '100vh';
+        contInfo.style.top = '0';            
+    }, 300);
+    lamp.style.transform = 'TranslateX(-20vw)';
+    centerTextBox.style.transform = 'translate(-35vw, -50%)';
+}
+
+function closeCard() {
+    setTimeout(() => {
+        contInfo.style.width = '0';
+        lamp.style.transform = 'TranslateX(0px)';
+        centerTextBox.style.transform = 'translate(-50%, -50%)';    
+    }, 300);
+    contInfo.style.height = '5px';
+    contInfo.style.top = '50%';
+}
+
+// Class
+
+class CardInfo {
 
 }
 
+
 // Execution
 btnOn.addEventListener('click', () => pushOn());
+menuList.forEach((item)=>{
+    item.addEventListener('click', ()=>{
+        openCard();
+    });
+});
+contInfo.addEventListener('click', ()=>{
+    closeCard();
+});
