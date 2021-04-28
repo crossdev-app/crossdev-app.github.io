@@ -407,12 +407,49 @@ body .box-home .v-menu .menu-list:hover {
 body .box-home .container-info {
   height: 5px;
   width: 0;
-  background-color: #222;
+  background-color: rgba(40, 40, 40, 0.95);
   position: absolute;
   top: 50%;
   right: 0;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   overflow: hidden;
+}
+
+body .box-home .container-info .info-box {
+  height: 92%;
+  width: 100%;
+}
+
+body .box-home .container-info .cls-btn {
+  height: 8%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+body .box-home .container-info .cls-btn span {
+  opacity: 0;
+  margin-right: 25px;
+  padding: 3px 15px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 900;
+  color: #222;
+  background-color: rgba(73, 162, 111, 0.5);
+  border-radius: 25px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.2s ease-in-out, opacity 0.3s ease-in-out;
+  transition: background-color 0.2s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+body .box-home .container-info .cls-btn span:hover {
+  background-color: rgba(73, 162, 111, 0.8);
 }
 /*# sourceMappingURL=main.css.map */

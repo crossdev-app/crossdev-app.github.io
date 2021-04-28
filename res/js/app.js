@@ -17,8 +17,13 @@ let menuList = document.querySelectorAll('.menu-list');
 let contInfo = document.querySelector('.container-info');
 let lamp = document.querySelector('.lamp');
 let centerTextBox = document.querySelector('.text-center');
+let clsBtn = document.querySelector('.cls-btn span');
 
+// Class
 
+class CardInfo {
+
+}
 
 // Function Creation
 
@@ -93,8 +98,11 @@ function openCard() {
     contInfo.style.width = '50vw';        
     setTimeout(() => {
         contInfo.style.height = '100vh';
-        contInfo.style.top = '0';            
+        contInfo.style.top = '0';
     }, 300);
+    setTimeout(() => {
+        clsBtn.style.opacity = '1';
+    }, 700);
     lamp.style.transform = 'TranslateX(-20vw)';
     centerTextBox.style.transform = 'translate(-35vw, -50%)';
 }
@@ -103,18 +111,14 @@ function closeCard() {
     setTimeout(() => {
         contInfo.style.width = '0';
         lamp.style.transform = 'TranslateX(0px)';
-        centerTextBox.style.transform = 'translate(-50%, -50%)';    
-    }, 300);
-    contInfo.style.height = '5px';
-    contInfo.style.top = '50%';
+        centerTextBox.style.transform = 'translate(-50%, -50%)';        
+    }, 500);
+    setTimeout(() => {
+        contInfo.style.height = '5px';
+        contInfo.style.top = '50%';    
+    }, 200);
+    clsBtn.style.opacity = '0';
 }
-
-// Class
-
-class CardInfo {
-
-}
-
 
 // Execution
 btnOn.addEventListener('click', () => pushOn());
@@ -123,6 +127,6 @@ menuList.forEach((item)=>{
         openCard();
     });
 });
-contInfo.addEventListener('click', ()=>{
+clsBtn.addEventListener('click', ()=>{
     closeCard();
 });
