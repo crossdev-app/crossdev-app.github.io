@@ -345,9 +345,7 @@ body {
       }
 
       #me {
-        // display: block;
         opacity: 0;
-        // opacity: 1;
         position: relative;
         transition: all 0.3s ease-in-out;
 
@@ -372,8 +370,8 @@ body {
           h2 {
             font-family: "Lato", sans-serif;
             color: #eee;
+            width: max-content;
             font-size: 2rem;
-            text-align: center;
             margin: 15px;
 
             &::after {
@@ -382,7 +380,7 @@ body {
               height: 5px;
               width: 75px;
               background-color: #49a26f;
-              transform: translateX(60px);
+              transform: translateX(25%);
               border-radius: 25px;
             }
           }
@@ -458,7 +456,7 @@ body {
         width: 100%;
         display: flex;
         align-items: center;
-        justify-content: end;
+        justify-content: flex-end;
 
         span {
           opacity: 0;

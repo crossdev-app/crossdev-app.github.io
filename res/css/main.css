@@ -462,8 +462,10 @@ body .box-home .container-info #me .info-box {
 body .box-home .container-info #me .info-box h2 {
   font-family: "Lato", sans-serif;
   color: #eee;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
   font-size: 2rem;
-  text-align: center;
   margin: 15px;
 }
 
@@ -473,8 +475,8 @@ body .box-home .container-info #me .info-box h2::after {
   height: 5px;
   width: 75px;
   background-color: #49a26f;
-  -webkit-transform: translateX(60px);
-          transform: translateX(60px);
+  -webkit-transform: translateX(25%);
+          transform: translateX(25%);
   border-radius: 25px;
 }
 
@@ -557,7 +559,7 @@ body .box-home .container-info .cls-btn {
           align-items: center;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
-          justify-content: end;
+          justify-content: flex-end;
 }
 
 body .box-home .container-info .cls-btn span {
