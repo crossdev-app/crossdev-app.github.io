@@ -18,6 +18,9 @@ let contInfo = document.querySelector('.container-info');
 let lamp = document.querySelector('.lamp');
 let centerTextBox = document.querySelector('.text-center');
 let clsBtn = document.querySelector('.cls-btn span');
+let itsMe = document.getElementById('itsMe');
+let itsMeMenu = document.getElementById('me');
+let undH2Txt = document.querySelector('#me .info-box h2::after');
 
 // Class
 
@@ -95,16 +98,17 @@ function showText() {
 }
 
 function openCard() {
-    contInfo.style.width = '50vw';        
+    contInfo.style.width = '50vw';
     setTimeout(() => {
         contInfo.style.height = '100vh';
         contInfo.style.top = '0';
+        contInfo.style.boxShadow =  '5px 0px 15px #aaa';
     }, 300);
     setTimeout(() => {
         clsBtn.style.opacity = '1';
-    }, 700);
+    }, 1200);
     lamp.style.transform = 'TranslateX(-20vw)';
-    centerTextBox.style.transform = 'translate(-35vw, -50%)';
+    centerTextBox.style.transform = 'translate(-40vw, -50%)';
 }
 
 function closeCard() {
@@ -115,9 +119,25 @@ function closeCard() {
     }, 500);
     setTimeout(() => {
         contInfo.style.height = '5px';
-        contInfo.style.top = '50%';    
+        contInfo.style.top = '50%';
+        contInfo.style.boxShadow =  'none';
     }, 200);
+    closeMee();
     clsBtn.style.opacity = '0';
+}
+
+function openMe() {
+    itsMeMenu.style.display = 'block';
+    setTimeout(() => {
+        itsMeMenu.style.opacity = '1';
+    }, 900);
+}
+
+function closeMee(){
+    itsMeMenu.style.opacity = '0';
+    setTimeout(() => {
+        itsMeMenu.display = 'none';
+    }, 500);
 }
 
 // Execution
@@ -129,4 +149,7 @@ menuList.forEach((item)=>{
 });
 clsBtn.addEventListener('click', ()=>{
     closeCard();
+});
+itsMe.addEventListener('click', ()=> {
+    openMe();
 });

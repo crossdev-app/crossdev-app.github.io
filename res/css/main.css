@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito&family=Roboto&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -407,18 +407,143 @@ body .box-home .v-menu .menu-list:hover {
 body .box-home .container-info {
   height: 5px;
   width: 0;
-  background-color: rgba(40, 40, 40, 0.95);
+  background-color: rgba(30, 30, 30, 0.75);
   position: absolute;
   top: 50%;
   right: 0;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 body .box-home .container-info .info-box {
   height: 92%;
   width: 100%;
+}
+
+body .box-home .container-info #me {
+  opacity: 0;
+  position: relative;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+body .box-home .container-info #me .filter {
+  background-image: url("../img/bg/profile_bg.jpg");
+  background-repeat: no-repeat;
+  background-position-x: -200px;
+  background-size: cover;
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 35%;
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+  -webkit-box-shadow: inset 15px -10px 30px 40px #1e1e1e;
+          box-shadow: inset 15px -10px 30px 40px #1e1e1e;
+}
+
+body .box-home .container-info #me .info-box {
+  height: 100%;
+  width: 65%;
+  padding: 10px 20px;
+}
+
+body .box-home .container-info #me .info-box h2 {
+  font-family: "Lato", sans-serif;
+  color: #eee;
+  font-size: 2rem;
+  text-align: center;
+  margin: 15px;
+}
+
+body .box-home .container-info #me .info-box h2::after {
+  content: "";
+  display: block;
+  height: 5px;
+  width: 75px;
+  background-color: #49a26f;
+  -webkit-transform: translateX(60px);
+          transform: translateX(60px);
+  border-radius: 25px;
+}
+
+body .box-home .container-info #me .info-box p {
+  font-family: "Nunito", sans-serif;
+  color: #eee;
+  font-size: 1.2rem;
+  letter-spacing: 1.5px;
+}
+
+body .box-home .container-info #me .info-box #life-path {
+  font-family: "Nunito", sans-serif;
+  color: #eee;
+  font-size: 1.3rem;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+}
+
+body .box-home .container-info #me .info-box #life-path::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 50px;
+  background-color: #49a26f;
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
+  border-radius: 25px;
+}
+
+body .box-home .container-info #me .info-box .edu {
+  margin-top: 15px;
+  margin-left: 30px;
+  font-family: "Nunito", sans-serif;
+  color: #eee;
+  font-size: 1.2rem;
+  letter-spacing: 1.5px;
+}
+
+body .box-home .container-info #me .info-box .edu p {
+  margin-left: 10px;
+}
+
+body .box-home .container-info #me .info-box .edu p span {
+  color: #49a26f;
+}
+
+body .box-home .container-info #me .info-box .edu .scnd-line {
+  margin-left: 16px;
+}
+
+body .box-home .container-info #me .info-box .work-exp {
+  margin-top: 15px;
+  margin-left: 30px;
+  font-family: "Nunito", sans-serif;
+  color: #eee;
+  font-size: 1.2rem;
+  letter-spacing: 1.5px;
+}
+
+body .box-home .container-info #me .info-box .work-exp p {
+  margin-left: 10px;
+}
+
+body .box-home .container-info #me .info-box .work-exp p span {
+  color: #49a26f;
+}
+
+body .box-home .container-info #me .info-box .work-exp .scnd-line {
+  margin-left: 16px;
 }
 
 body .box-home .container-info .cls-btn {
@@ -438,7 +563,7 @@ body .box-home .container-info .cls-btn {
 body .box-home .container-info .cls-btn span {
   opacity: 0;
   margin-right: 25px;
-  padding: 3px 15px;
+  padding: 5px 15px;
   font-family: "Nunito", sans-serif;
   font-weight: 900;
   color: #222;
