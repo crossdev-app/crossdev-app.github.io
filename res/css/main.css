@@ -407,7 +407,7 @@ body .box-home .v-menu .menu-list:hover {
 body .box-home .container-info {
   height: 5px;
   width: 0;
-  background-color: rgba(30, 30, 30, 0.75);
+  background-color: rgba(30, 30, 30, 0.95);
   position: absolute;
   top: 50%;
   right: 0;
@@ -432,6 +432,7 @@ body .box-home .container-info .info-box {
 }
 
 body .box-home .container-info #me {
+  display: none;
   opacity: 0;
   position: relative;
   -webkit-transition: all 0.3s ease-in-out;
@@ -546,6 +547,173 @@ body .box-home .container-info #me .info-box .work-exp p span {
 
 body .box-home .container-info #me .info-box .work-exp .scnd-line {
   margin-left: 16px;
+}
+
+body .box-home .container-info #workshop {
+  opacity: 0;
+  position: relative;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  display: none;
+  padding: 15px 25px;
+}
+
+body .box-home .container-info #workshop h2 {
+  font-family: "Lato", sans-serif;
+  color: #eee;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  font-size: 2rem;
+  margin: 15px;
+}
+
+body .box-home .container-info #workshop h2::after {
+  content: "";
+  display: block;
+  height: 5px;
+  width: 75px;
+  background-color: #49a26f;
+  -webkit-transform: translateX(25%);
+          transform: translateX(25%);
+  border-radius: 25px;
+}
+
+body .box-home .container-info #workshop p {
+  font-family: "Nunito", sans-serif;
+  color: #eee;
+  font-size: 1.2rem;
+  letter-spacing: 1.5px;
+}
+
+body .box-home .container-info #collabs {
+  opacity: 0;
+  position: relative;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  display: none;
+  padding: 15px 25px;
+}
+
+body .box-home .container-info #collabs h2 {
+  font-family: "Lato", sans-serif;
+  color: #eee;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  font-size: 2rem;
+  margin: 15px;
+}
+
+body .box-home .container-info #collabs h2::after {
+  content: "";
+  display: block;
+  height: 5px;
+  width: 75px;
+  background-color: #49a26f;
+  -webkit-transform: translateX(25%);
+          transform: translateX(25%);
+  border-radius: 25px;
+}
+
+body .box-home .container-info #collabs p {
+  font-family: "Nunito", sans-serif;
+  color: #eee;
+  font-size: 1.2rem;
+  letter-spacing: 1.5px;
+}
+
+body .box-home .container-info #collabs p a {
+  text-decoration: none;
+  color: #fff;
+  font-style: italic;
+}
+
+body .box-home .container-info #collabs .form-box {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  padding: 25px;
+  margin: 15px 0px;
+  border: 2px solid #49a26f;
+  border-radius: 25px;
+  background-color: rgba(40, 40, 40, 0.95);
+}
+
+body .box-home .container-info #collabs .form-box input {
+  margin-top: 8px;
+  margin-bottom: 15px;
+  padding-left: 25px;
+  width: 100%;
+  height: 40px;
+  background-color: rgba(30, 30, 30, 0.95);
+  border: none;
+  border-radius: 5px;
+  color: #666;
+  font-family: "Nunito", sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  caret-color: #49a26f;
+  outline: none;
+}
+
+body .box-home .container-info #collabs .form-box input:focus {
+  border-bottom: 2px solid #49a26f;
+}
+
+body .box-home .container-info #collabs .form-box input:valid {
+  color: #49a26f;
+  border-bottom: 2px solid #49a26f;
+  font-weight: normal;
+}
+
+body .box-home .container-info #collabs .form-box textarea {
+  margin-top: 8px;
+  margin-bottom: 15px;
+  padding: 10px 20px;
+  background-color: rgba(30, 30, 30, 0.95);
+  width: 100%;
+  border: none;
+  outline: none;
+  caret-color: #49a26f;
+  resize: none;
+  border-radius: 5px;
+  color: #666;
+  font-family: "Nunito", sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+body .box-home .container-info #collabs .form-box textarea:focus {
+  -webkit-box-shadow: 2px 0px 15px #555;
+          box-shadow: 2px 0px 15px #555;
+}
+
+body .box-home .container-info #collabs .form-box textarea:valid {
+  font-weight: normal;
+  color: #49a26f;
+  -webkit-box-shadow: 2px 0px 15px #555;
+          box-shadow: 2px 0px 15px #555;
+}
+
+body .box-home .container-info #collabs .sendIt {
+  margin: 0px auto;
+  padding: 5px 30px;
+  border-radius: 25px;
+  font-family: "Nunito", sans-serif;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  background-color: #49a26f;
+  opacity: 0.5;
+  cursor: pointer;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+body .box-home .container-info #collabs .sendIt:hover {
+  opacity: 1;
+  color: #fff;
 }
 
 body .box-home .container-info .cls-btn {

@@ -20,7 +20,10 @@ let centerTextBox = document.querySelector('.text-center');
 let clsBtn = document.querySelector('.cls-btn span');
 let itsMe = document.getElementById('itsMe');
 let itsMeMenu = document.getElementById('me');
-let undH2Txt = document.querySelector('#me .info-box h2::after');
+let wrkshp = document.getElementById('wrkshp');
+let wrkshpMenu = document.getElementById('workshop');
+let collabs = document.getElementById('clbs');
+let collabsMenu = document.getElementById('collabs');
 
 // Class
 
@@ -123,6 +126,8 @@ function closeCard() {
         contInfo.style.boxShadow =  'none';
     }, 200);
     closeMee();
+    closeWrkshop();
+    closeCollabs();
     clsBtn.style.opacity = '0';
 }
 
@@ -136,7 +141,35 @@ function openMe() {
 function closeMee(){
     itsMeMenu.style.opacity = '0';
     setTimeout(() => {
-        itsMeMenu.display = 'none';
+        itsMeMenu.style.display = 'none';
+    }, 500);
+}
+
+function openWrkshop() {
+    wrkshpMenu.style.display = 'block';
+    setTimeout(() => {
+        wrkshpMenu.style.opacity = '1';
+    }, 900);
+}
+
+function closeWrkshop() {
+    wrkshpMenu.style.opacity = '0';
+    setTimeout(() => {
+        wrkshpMenu.style.display = 'none';
+    }, 500);
+}
+
+function openCollabs() {
+    collabsMenu.style.display = 'block';
+    setTimeout(() => {
+        collabsMenu.style.opacity = '1';
+    }, 900);
+}
+
+function closeCollabs() {
+    collabsMenu.style.opacity = '0';
+    setTimeout(() => {
+        collabsMenu.style.display = 'none';
     }, 500);
 }
 
@@ -152,4 +185,10 @@ clsBtn.addEventListener('click', ()=>{
 });
 itsMe.addEventListener('click', ()=> {
     openMe();
+});
+wrkshp.addEventListener('click', ()=>{
+    openWrkshop();
+});
+collabs.addEventListener('click', ()=> {
+    openCollabs();
 });
