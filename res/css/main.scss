@@ -483,6 +483,82 @@ body {
           font-size: 1.2rem;
           letter-spacing: 1.5px;
         }
+
+        // !!!!!!!!!!!!!!! TEMPORARY !!!!!!!!!!!!!!!!!!!!!!!!
+        .cert-box {
+          padding: 25px;
+          height: 80%;
+          width: 100%;
+          background-color: rgba(40, 40, 40, 0.95);
+          margin-top: 15px;
+          border-radius: 15px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+
+          .cert-card {
+            width: 100%;
+            height: 25%;
+            background-color: rgba(30, 30, 30, 0.95);
+            border-radius: 8px;
+            display: flex;
+
+            .cert-img {
+              height: 100%;
+              width: 40%;
+              text-align: center;
+              padding: 5px;
+
+              img {
+                height: 100%;
+              }
+            }
+
+            .cert-info {
+              height: 100%;
+              width: 60%;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              padding: 10px;
+
+              h3 {
+                margin: 8px 0px;
+                font-size: 1.1rem;
+                color: #49a26f;
+                font-family: "Nunito", sans-serif;
+                text-align: center;
+              }
+
+              p {
+                font-size: 1rem;
+
+                span {
+                  font-style: italic;
+                }
+              }
+
+              .cert-detail-btn {
+                align-self: flex-end;
+                width: max-content;
+                font-size: 0.8rem;
+                padding: 5px 15px;
+                margin-right: 15px;
+                background-color: #49a26f;
+                border-radius: 25px;
+                color: #fff;
+                font-family: "Nunito", sans-serif;
+                cursor: pointer;
+                opacity: 0.6;
+                transition: opacity 0.1s ease-in-out;
+
+                &:hover {
+                  opacity: 1;
+                }
+              }
+            }
+          }
+        }
       }
 
       #collabs {
@@ -520,6 +596,15 @@ body {
             text-decoration: none;
             color: #fff;
             font-style: italic;
+          }
+        }
+
+        #tele,
+        #mailme {
+          color: #49a26f;
+
+          &:hover {
+            color: hsl(146, 38%, 60%);
           }
         }
 
@@ -564,6 +649,7 @@ body {
             padding: 10px 20px;
             background-color: rgba(30, 30, 30, 0.95);
             width: 100%;
+            height: 20%;
             border: none;
             outline: none;
             caret-color: #49a26f;

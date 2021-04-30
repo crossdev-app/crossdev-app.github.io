@@ -586,6 +586,100 @@ body .box-home .container-info #workshop p {
   letter-spacing: 1.5px;
 }
 
+body .box-home .container-info #workshop .cert-box {
+  padding: 25px;
+  height: 80%;
+  width: 100%;
+  background-color: rgba(40, 40, 40, 0.95);
+  margin-top: 15px;
+  border-radius: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+body .box-home .container-info #workshop .cert-box .cert-card {
+  width: 100%;
+  height: 25%;
+  background-color: rgba(30, 30, 30, 0.95);
+  border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .box-home .container-info #workshop .cert-box .cert-card .cert-img {
+  height: 100%;
+  width: 40%;
+  text-align: center;
+  padding: 5px;
+}
+
+body .box-home .container-info #workshop .cert-box .cert-card .cert-img img {
+  height: 100%;
+}
+
+body .box-home .container-info #workshop .cert-box .cert-card .cert-info {
+  height: 100%;
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px;
+}
+
+body .box-home .container-info #workshop .cert-box .cert-card .cert-info h3 {
+  margin: 8px 0px;
+  font-size: 1.1rem;
+  color: #49a26f;
+  font-family: "Nunito", sans-serif;
+  text-align: center;
+}
+
+body .box-home .container-info #workshop .cert-box .cert-card .cert-info p {
+  font-size: 1rem;
+}
+
+body .box-home .container-info #workshop .cert-box .cert-card .cert-info p span {
+  font-style: italic;
+}
+
+body .box-home .container-info #workshop .cert-box .cert-card .cert-info .cert-detail-btn {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  font-size: 0.8rem;
+  padding: 5px 15px;
+  margin-right: 15px;
+  background-color: #49a26f;
+  border-radius: 25px;
+  color: #fff;
+  font-family: "Nunito", sans-serif;
+  cursor: pointer;
+  opacity: 0.6;
+  -webkit-transition: opacity 0.1s ease-in-out;
+  transition: opacity 0.1s ease-in-out;
+}
+
+body .box-home .container-info #workshop .cert-box .cert-card .cert-info .cert-detail-btn:hover {
+  opacity: 1;
+}
+
 body .box-home .container-info #collabs {
   opacity: 0;
   position: relative;
@@ -627,6 +721,16 @@ body .box-home .container-info #collabs p a {
   text-decoration: none;
   color: #fff;
   font-style: italic;
+}
+
+body .box-home .container-info #collabs #tele,
+body .box-home .container-info #collabs #mailme {
+  color: #49a26f;
+}
+
+body .box-home .container-info #collabs #tele:hover,
+body .box-home .container-info #collabs #mailme:hover {
+  color: #72c094;
 }
 
 body .box-home .container-info #collabs .form-box {
@@ -673,6 +777,7 @@ body .box-home .container-info #collabs .form-box textarea {
   padding: 10px 20px;
   background-color: rgba(30, 30, 30, 0.95);
   width: 100%;
+  height: 20%;
   border: none;
   outline: none;
   caret-color: #49a26f;

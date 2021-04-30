@@ -24,6 +24,10 @@ let wrkshp = document.getElementById('wrkshp');
 let wrkshpMenu = document.getElementById('workshop');
 let collabs = document.getElementById('clbs');
 let collabsMenu = document.getElementById('collabs');
+let github = document.getElementById('github');
+let linkedin = document.getElementById('linkedin');
+let instagram = document.getElementById('instagram');
+let twitter = document.getElementById('twitter');
 
 // Class
 
@@ -173,6 +177,10 @@ function closeCollabs() {
     }, 500);
 }
 
+function openLink(urlLink) {
+    window.open(urlLink);
+}
+
 // Execution
 btnOn.addEventListener('click', () => pushOn());
 menuList.forEach((item)=>{
@@ -191,4 +199,16 @@ wrkshp.addEventListener('click', ()=>{
 });
 collabs.addEventListener('click', ()=> {
     openCollabs();
+});
+instagram.addEventListener('click', ()=>{
+    openLink('https://instagram.com/_malik.ab.azz');
+});
+linkedin.addEventListener('click', ()=>{
+    openLink('https://www.linkedin.com/in/malik-abdul-aziz-a33991204');
+});
+twitter.addEventListener('click', ()=>{
+    openLink('https://twitter.com/_301localhost');
+});
+github.addEventListener('click', ()=>{
+    openLink('https://github.com/crossdev-app');
 });
