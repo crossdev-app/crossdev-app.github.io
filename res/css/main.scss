@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito&family=Roboto&display=swap");
 
+// Breakpoint
+$tablet: 1024px;
+$mobile: 430px;
+
 * {
   margin: 0;
   padding: 0;
@@ -337,11 +341,19 @@ body {
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
+      justify-content: space-between;
 
       .info-box {
-        height: 92%;
+        height: 90vh;
         width: 100%;
+        overflow-y: scroll;
+
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
       }
 
       #me {
@@ -357,13 +369,13 @@ body {
           background-size: cover;
           position: absolute;
           right: 0;
-          height: 100%;
+          height: 95%;
           width: 35%;
           filter: grayscale(1);
           box-shadow: inset 15px -10px 30px 40px rgb(30, 30, 30);
         }
 
-        .info-box {
+        .info-detail {
           height: 100%;
           width: 65%;
           padding: 10px 20px;
@@ -371,9 +383,10 @@ body {
           h2 {
             font-family: "Lato", sans-serif;
             color: #eee;
+            text-shadow: 0px 0px 15px rgba(40, 40, 40, 0.95);
             width: max-content;
             font-size: 2rem;
-            margin: 15px;
+            margin: 25px 15px;
 
             &::after {
               content: "";
@@ -389,6 +402,7 @@ body {
           p {
             font-family: "Nunito", sans-serif;
             color: #eee;
+            text-shadow: 15px 15px 10px rgb(40, 40, 40);
             font-size: 1.2rem;
             letter-spacing: 1.5px;
           }
@@ -457,7 +471,7 @@ body {
         position: relative;
         transition: all 0.3s ease-in-out;
         display: none;
-        padding: 15px 25px;
+        padding: 10px 25px;
 
         h2 {
           font-family: "Lato", sans-serif;
@@ -486,7 +500,7 @@ body {
 
         // !!!!!!!!!!!!!!! TEMPORARY !!!!!!!!!!!!!!!!!!!!!!!!
         .cert-box {
-          padding: 25px;
+          padding: 20px;
           height: 80%;
           width: 100%;
           background-color: rgba(40, 40, 40, 0.95);
@@ -498,7 +512,7 @@ body {
 
           .cert-card {
             width: 100%;
-            height: 25%;
+            height: 30%;
             background-color: rgba(30, 30, 30, 0.95);
             border-radius: 8px;
             display: flex;
@@ -506,11 +520,14 @@ body {
             .cert-img {
               height: 100%;
               width: 40%;
-              text-align: center;
               padding: 5px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
 
               img {
-                height: 100%;
+                width: 80%;
+                max-width: 230px;
               }
             }
 
@@ -649,7 +666,7 @@ body {
             padding: 10px 20px;
             background-color: rgba(30, 30, 30, 0.95);
             width: 100%;
-            height: 20%;
+            height: 200px;
             border: none;
             outline: none;
             caret-color: #49a26f;
@@ -690,7 +707,9 @@ body {
       }
 
       .cls-btn {
-        height: 8%;
+        background-color: rgba(68, 68, 68, 0.2);
+        box-shadow: -2px -2px 10px rgba(255, 255, 255, 0.2);
+        height: 7vh;
         width: 100%;
         display: flex;
         align-items: center;
@@ -712,6 +731,185 @@ body {
           &:hover {
             background-color: rgb(247, 244, 108);
           }
+        }
+      }
+    }
+  }
+
+  @media (max-width: $tablet) {
+    .box-home {
+      .box-brand {
+        top: 3vh;
+        left: 3vh;
+      }
+
+      .v-menu {
+        .menu-list {
+          width: 20px;
+        }
+      }
+
+      .text-center {
+        width: 80vw;
+      }
+
+      .container-info {
+        #me {
+          .filter {
+            height: 50%;
+            width: 50%;
+            top: 0;
+            background-position-x: center;
+          }
+
+          .info-detail {
+            height: max-content;
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+
+        #workshop {
+          .cert-box {
+            .cert-card {
+              .cert-img {
+                img {
+                  width: 95%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: $mobile) {
+    .box-home {
+      .box-brand {
+        img {
+          width: 150px;
+        }
+      }
+
+      .find-me {
+        bottom: 2vh;
+        left: 2vw;
+        transform: scale(0.8);
+      }
+
+      .text-center {
+        .txt-box {
+          #word1 {
+            font-size: 3.5rem;
+          }
+
+          #word2 {
+            font-size: 3rem;
+          }
+        }
+      }
+
+      .v-menu {
+        .menu-list {
+          font-size: 1.1rem;
+        }
+      }
+
+      .container-info {
+        justify-content: space-between;
+
+        .info-box {
+          overflow-y: scroll;
+        }
+
+        #me {
+          .filter {
+            height: 60vh;
+            width: 60vw;
+          }
+
+          .info-detail {
+            height: 90vh;
+            overflow-y: scroll;
+            h2 {
+              font-size: 1.5rem;
+              margin: 15px 0px;
+            }
+
+            p {
+              font-size: 1.1rem;
+              line-height: 20px;
+            }
+
+            .edu,
+            .work-exp {
+              margin-left: 15px;
+            }
+          }
+        }
+
+        #workshop {
+          height: 90vh;
+
+          h2 {
+            margin: 10px 15px;
+          }
+
+          p {
+            font-size: 1.1rem;
+            line-height: 20px;
+          }
+
+          .cert-box {
+            padding: 8px;
+
+            .cert-card {
+              .cert-info {
+                h3 {
+                  font-size: 1rem;
+                  line-height: 22px;
+                }
+
+                .detail-box {
+                  p {
+                    font-size: 0.8rem;
+                    line-height: 20px;
+                  }
+                }
+
+                .cert-detail-btn {
+                  transform: scale(0.9);
+                }
+              }
+            }
+          }
+        }
+
+        #collabs {
+          height: 90vh;
+          padding: 8px 15px;
+
+          h2 {
+            font-size: 1.8rem;
+            margin: 10px 15px;
+          }
+
+          p {
+            font-size: 1.05rem;
+            line-height: 20px;
+          }
+
+          .form-box {
+            padding: 15px;
+          }
+        }
+
+        .cls-btn {
+          background-color: rgba(68, 68, 68, 0.2);
+          box-shadow: -2px -2px 10px rgba(255, 255, 255, 0.2);
         }
       }
     }

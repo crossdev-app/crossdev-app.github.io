@@ -37,6 +37,12 @@ class CardInfo {
 
 // Function Creation
 
+// Screen Size Listener
+function viewPoint(desktop, tablet, mobile) {
+    var scrnSize = window.innerWidth;
+    return scrnSize > 1025 ? desktop : (scrnSize > 765 ? tablet : mobile);
+}
+
 function pushOn() {
     isON = true;
     btnShadow.style.top = 'auto';
@@ -105,7 +111,7 @@ function showText() {
 }
 
 function openCard() {
-    contInfo.style.width = '50vw';
+    contInfo.style.width = viewPoint('50vw', '75vw', '100vw');
     setTimeout(() => {
         contInfo.style.height = '100vh';
         contInfo.style.top = '0';
@@ -114,15 +120,15 @@ function openCard() {
     setTimeout(() => {
         clsBtn.style.opacity = '1';
     }, 1200);
-    lamp.style.transform = 'TranslateX(-20vw)';
-    centerTextBox.style.transform = 'translate(-40vw, -50%)';
+    lamp.style.transform = viewPoint('TranslateX(-20vw)', 'TranslateX(0px)', 'TranslateX(0px)');
+    centerTextBox.style.transform = viewPoint('translate(-40vw, -50%)', 'translate(-50%, -50%)', 'translate(-50%, -50%)');
 }
 
 function closeCard() {
     setTimeout(() => {
         contInfo.style.width = '0';
         lamp.style.transform = 'TranslateX(0px)';
-        centerTextBox.style.transform = 'translate(-50%, -50%)';        
+        centerTextBox.style.transform = 'translate(-50%, -50%)';
     }, 500);
     setTimeout(() => {
         contInfo.style.height = '5px';
@@ -212,3 +218,10 @@ twitter.addEventListener('click', ()=>{
 github.addEventListener('click', ()=>{
     openLink('https://github.com/crossdev-app');
 });
+
+
+// Test
+// window.addEventListener('resize', ()=>{
+//     console.log('View => ' + viewPoint('Desktop', 'Tablet', 'Mobile'));
+// });
+
