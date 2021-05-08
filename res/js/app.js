@@ -28,6 +28,9 @@ let github = document.getElementById('github');
 let linkedin = document.getElementById('linkedin');
 let instagram = document.getElementById('instagram');
 let twitter = document.getElementById('twitter');
+let clickMail = document.getElementById('mailme');
+let clickTele = document.getElementById('tele');
+let clickCert = document.querySelectorAll('.cert-detail-btn');
 
 // Class
 
@@ -187,6 +190,14 @@ function openLink(urlLink) {
     window.open(urlLink);
 }
 
+function mailMe() {
+    var mailTo = 'malikdqa@gmail.com';
+    var subject = 'Collabs Time!';
+    var url = `mailto:${mailTo}?subject=${subject}`;
+
+    openLink(url);
+}
+
 // Execution
 btnOn.addEventListener('click', () => pushOn());
 menuList.forEach((item)=>{
@@ -219,9 +230,33 @@ github.addEventListener('click', ()=>{
     openLink('https://github.com/crossdev-app');
 });
 
+clickTele.addEventListener('click', ()=>{
+    openLink('https://telegram.me/malikabazz');
+});
+clickMail.addEventListener('click', ()=>{
+    mailMe();
+});
+
+clickCert.forEach((e, i)=>{
+    e.addEventListener('click', ()=>{
+        switch (i) {
+            case 0:
+                openLink('https://drive.google.com/file/d/1e-3qRG-ttHtjwbT9k-41QsOaTFO8Syxq/view');
+                break;
+            case 1:
+                openLink('https://progate.com/course_certificate/2b243214qqe1u1');
+                break;
+            case 2:
+                openLink('https://progate.com/course_certificate/45dc0224qq8cv1');
+                break;
+            default:
+                break;
+        }
+    })
+});
+
 
 // Test
 // window.addEventListener('resize', ()=>{
 //     console.log('View => ' + viewPoint('Desktop', 'Tablet', 'Mobile'));
 // });
-
