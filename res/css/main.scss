@@ -179,6 +179,7 @@ body {
       flex-direction: column;
       align-items: center;
       transition: transform 0.5s ease-in-out;
+      position: relative;
 
       .hanger {
         height: 100px;
@@ -207,14 +208,17 @@ body {
       }
 
       #lightning {
-        height: 450;
-        width: 400;
-        display: none;
+        // height: 450px;
+        // width: 400px;
         opacity: 0.2;
+        position: absolute;
+        top: 180px;
+        display: none;
+
 
         img {
-          height: 450;
-          width: 400;
+          height: 450px;
+          width: 400px;
         }
       }
     }
