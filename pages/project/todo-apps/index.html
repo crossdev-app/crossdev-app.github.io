@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App | Crossdev</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/res/img/favicon_io/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/res/img/favicon_io/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/res/img/favicon_io/favicon-16x16.png" />
+    <link rel="manifest" href="/res/img/favicon_io/site.webmanifest" />
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- Countdown -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.2.0/jquery.countdown.js"
+        integrity="sha512-aWlTsIGUhEq2+LQNA7Wq+OsLaouCcGGaHBWzoU9duKy26ImHe12gRtQnj4688p7QUHG+J4CMb+XwgZ8LYqQ+kQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Datetimepicker -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.0/moment.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.39.0/js/tempusdominus-bootstrap-4.min.js"
+        integrity="sha512-k6/Bkb8Fxf/c1Tkyl39yJwcOZ1P4cRrJu77p83zJjN2Z55prbFHxPs9vN7q3l3+tSMGPDdoH51AEU8Vgo1cgAA=="
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.39.0/css/tempusdominus-bootstrap-4.min.css"
+        integrity="sha512-3JRrEUwaCkFUBLK1N8HehwQgu8e23jTH4np5NHOmQOobuC4ROQxFwFgBLTnhcnQRMs84muMh0PnnwXlPq5MGjg=="
+        crossorigin="anonymous" />
+
+    <!-- Sweet Alert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div id="app">
+        <div id="nav" class="d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+                <iconify-icon icon="flat-color-icons:todo-list" style="font-size: 24px;"></iconify-icon>
+                <h4 class="mb-0 ml-2">Todo's</h4>
+            </div>
+
+            <div class="d-flex justify-content-end">
+                <!-- <div class="input-group p-0 col-10" style="overflow: hidden;">
+                    <input type="text" class="form-control cstm-input-search" name="todo-search"
+                        :style="searchMode ? 'height: 30px; font-size: 12px;' : 'height: 30px; font-size: 12px; width: 0px; padding: 0px; transform: translateX(100%)' "
+                        placeholder="Todo Title">
+                    <div class="input-group-append">
+                        <button
+                            class="mr-2 btn btn-info btn-sm px-1 py-0 d-flex justify-content-center align-items-center"
+                            :style="searchMode ? 'border-top-left-radius: 0; border-bottom-left-radius: 0;':'border-top-left-radius: 3px; border-bottom-left-radius: 3px;'"
+                            @click="toggleSearch()">
+                            <iconify-icon v-if="searchMode" icon="ep:close-bold" class="m-0 px-1"
+                                style="font-size: 16px;"></iconify-icon>
+                            <iconify-icon v-else icon="bi:search" class="m-0 px-1" style="font-size: 14px;">
+                            </iconify-icon>
+                        </button>
+                    </div>
+                </div> -->
+                <button class="btn btn-success btn-sm px-1 py-0 d-flex justify-content-center align-items-center"
+                    @click="add()">
+                    <iconify-icon icon="carbon:add" class="m-0 p-0" style="font-size: 25px;"></iconify-icon>
+                </button>
+            </div>
+        </div>
+        <hr>
+        <div v-if="todos.length == 0" class="alert alert-info d-flex justify-content-center align-items-center">
+            <p class="m-0 font-italic">=== Empty todo list ===</p>
+        </div>
+        <div v-else v-for="t, idx in todos" :class="t.isDone == 0 ? 'itm-list': 'itm-list-done'">
+            <div class="d-flex justify-content-between">
+                <p class="mb-1" style="cursor: pointer;" @click="showDetail(idx)"><strong>{{ t.title }}</strong></p>
+                <div v-if="t.isDone == 0" class="d-flex align-items-center">
+                    <iconify-icon icon="ant-design:field-time-outlined" style="font-size: 20px;"></iconify-icon>
+                    <p class="cntdwn small ml-2 mb-0" :data-cntdwn="t.deadline"></p>
+                </div>
+                <div v-else class="d-flex align-items-center">
+                    <iconify-icon icon="akar-icons:circle-check" style="font-size: 20px; color: #080;"></iconify-icon>
+                    <span class="small ml-2" style="color: #080;">Done</span>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <p class="mb-1 small text-muted todo-details" style="cursor: pointer;" @click="showDetail(idx)">{{
+                    t.detail }}</p>
+                <div class="d-flex align-items-center">
+                    <iconify-icon v-if="t.isDone == 0" @click="setDone(idx)" icon="akar-icons:circle-check"
+                        class="hover-pointer" style="font-size: 16px; color: #080;" data-toggle="tooltip"
+                        data-placement="bottom" title="Done Todo"></iconify-icon>
+                    <iconify-icon v-if="t.isDone == 0" @click="editTodo(idx)" icon="fa-edit" class="hover-pointer ml-2"
+                        style="font-size: 12px; color: rgb(214, 211, 0);" data-toggle="tooltip" data-placement="bottom"
+                        title="Edit Todo"></iconify-icon>
+                    <iconify-icon @click="deleteTodo(idx)" icon="fa6-solid:trash" class="hover-pointer ml-2"
+                        style="font-size: 12px; color: rgb(255, 95, 95);" data-toggle="tooltip" data-placement="bottom"
+                        title="Delete Todo"></iconify-icon>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Add -->
+        <div class="modal fade" id="add_modal" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="card">
+                        <div class="card-header d-flex align-items-center">
+                            <iconify-icon icon="bx:list-plus" style="font-size: 30px; color: #080;"></iconify-icon>
+                            <h5 class="mb-0 ml-1">New Todo</h5>
+                        </div>
+                        <div class="card-body">
+                            <form id="form_add" class="form">
+                                <input type="text" id="todo-title" name="todo-title" class="form-control mb-2"
+                                    placeholder="Title" required>
+                                <textarea name="todo-detail" id="todo-detail" rows="3" class="form-control mb-2"
+                                    placeholder="Detail" required></textarea>
+                                <fieldset class="form-group">
+                                    <div class="row">
+                                        <div class="d-flex justify-content-between col-4 col-sm-3">
+                                            <p class="mb-0">Priority</p>
+                                            <span>:</span>
+                                        </div>
+                                        <div class="col-8 col-sm-9 d-flex justify-content-around">
+                                            <div class="form-check form-check-inline priority-radios">
+                                                <input class="form-check-input" type="radio" name="radio-prior"
+                                                    id="p-low" value="0" checked style="cursor: pointer;">
+                                                <label class="form-check-label" for="p-low"
+                                                    style="cursor: pointer;">Low</label>
+                                            </div>
+                                            <div class="form-check form-check-inline priority-radios">
+                                                <input class="form-check-input" type="radio" name="radio-prior"
+                                                    id="p-med" value="1" style="cursor: pointer;">
+                                                <label class="form-check-label" for="p-med"
+                                                    style="cursor: pointer;">Medium</label>
+                                            </div>
+                                            <div class="form-check form-check-inline priority-radios">
+                                                <input class="form-check-input" type="radio" name="radio-prior"
+                                                    id="p-hi" value="2" style="cursor: pointer;">
+                                                <label class="form-check-label" for="p-hi"
+                                                    style="cursor: pointer;">High</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <div class="row">
+                                        <div class="d-flex justify-content-between col-4 col-sm-3 align-items-center">
+                                            <p class="mb-0">Deadline</p>
+                                            <span>:</span>
+                                        </div>
+                                        <div class="input-group date col-8 col-sm-9" id="datetimepicker1"
+                                            data-target-input="nearest">
+                                            <input type="text" class="form-control datetimepicker-input"
+                                                data-target="#datetimepicker1" data-toggle="datetimepicker"
+                                                id="todo-deadline" name="todo-deadline" required />
+                                            <div class="input-group-append" data-target="#datetimepicker1"
+                                                data-toggle="datetimepicker">
+                                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <div class="d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-sm btn-primary mr-2">Save</button>
+                                    <button type="button" class="btn btn-sm btn-danger"
+                                        data-dismiss="modal">Cancel</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Edit -->
+        <div class="modal fade" id="edit_modal" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="card">
+                        <div class="card-header d-flex align-items-center">
+                            <iconify-icon icon="fa-edit" style="font-size: 20px; color: rgb(214, 211, 0);">
+                            </iconify-icon>
+                            <h5 class="mb-0 ml-1">Edit Todo</h5>
+                        </div>
+                        <div class="card-body">
+                            <form id="form_edit" class="form">
+                                <input id="edited-idx" type="hidden" value="">
+                                <input type="text" id="edit-todo-title" name="edit-todo-title" class="form-control mb-2"
+                                    placeholder="Title" required>
+                                <textarea name="edit-todo-detail" id="edit-todo-detail" rows="3"
+                                    class="form-control mb-2" placeholder="Detail" required></textarea>
+                                <fieldset class="form-group">
+                                    <div class="row">
+                                        <div class="d-flex justify-content-between col-4 col-sm-3">
+                                            <p class="mb-0">Priority</p>
+                                            <span>:</span>
+                                        </div>
+                                        <div class="col-8 col-sm-9 d-flex justify-content-around">
+                                            <div class="form-check form-check-inline priority-radios">
+                                                <input class="form-check-input" type="radio" name="edited-radio-prior"
+                                                    id="edit-p-low" value="0" style="cursor: pointer;">
+                                                <label class="form-check-label" for="edit-p-low"
+                                                    style="cursor: pointer;">Low</label>
+                                            </div>
+                                            <div class="form-check form-check-inline priority-radios">
+                                                <input class="form-check-input" type="radio" name="edited-radio-prior"
+                                                    id="edit-p-med" value="1" style="cursor: pointer;">
+                                                <label class="form-check-label" for="edit-p-med"
+                                                    style="cursor: pointer;">Medium</label>
+                                            </div>
+                                            <div class="form-check form-check-inline priority-radios">
+                                                <input class="form-check-input" type="radio" name="edited-radio-prior"
+                                                    id="edit-p-hi" value="2" style="cursor: pointer;">
+                                                <label class="form-check-label" for="edit-p-hi"
+                                                    style="cursor: pointer;">High</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <div class="row">
+                                        <div class="d-flex justify-content-between col-4 col-sm-3 align-items-center">
+                                            <p class="mb-0">Deadline</p>
+                                            <span>:</span>
+                                        </div>
+                                        <div class="input-group date col-8 col-sm-9" id="datetimepicker2"
+                                            data-target-input="nearest">
+                                            <input type="text" class="form-control datetimepicker-input"
+                                                data-target="#datetimepicker2" data-toggle="datetimepicker"
+                                                id="edit-todo-deadline" name="edit-todo-deadline" required />
+                                            <div class="input-group-append" data-target="#datetimepicker2"
+                                                data-toggle="datetimepicker">
+                                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <div class="d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-sm btn-primary mr-2">Save</button>
+                                    <button type="button" class="btn btn-sm btn-danger"
+                                        data-dismiss="modal">Cancel</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Detail -->
+        <div class="modal fade" id="detail_modal" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="card">
+                        <div class="card-header d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <iconify-icon icon="pajamas:todo-done" style="font-size: 20px; color: #080;">
+                                </iconify-icon>
+                                <h5 class="mb-0 ml-1"><span id="detail-todo-title"></span></h5>
+                            </div>
+                            <div id="detailed-timer" class="d-flex align-items-center">
+                                <iconify-icon icon="ant-design:field-time-outlined" style="font-size: 20px;">
+                                </iconify-icon>
+                                <p id="detail-todo-countdown" class="cntdwn small ml-2 mb-0" data-cntdwn=""></p>
+                            </div>
+                            <div id="detailed-done" class="d-flex align-items-center">
+                                <iconify-icon icon="akar-icons:circle-check" style="font-size: 20px; color: #080;">
+                                </iconify-icon>
+                                <span class="small ml-2" style="color: #080;">Done</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p id="detailed-todo" data-idx=""></p>
+                            <p id="detail-todo-detail"></p>
+                            <hr>
+                            <div class="d-flex justify-content-end align-items-center">
+                                <button id="btn-done" @click="setDone()"
+                                    class="btn btn-sm btn-success pull-right">Done</button>
+                                <button class="btn btn-sm btn-danger pull-right ml-2"
+                                    data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
