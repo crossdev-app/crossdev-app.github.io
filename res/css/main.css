@@ -141,6 +141,7 @@ body .box-home {
   position: absolute;
   top: 0;
   z-index: -1;
+  overflow: hidden;
 }
 body .box-home .box-brand {
   width: 0px;
@@ -156,6 +157,7 @@ body .box-home .box-brand img {
 body .box-home .lamp {
   margin: auto;
   height: 100vh;
+  overflow: hidden;
   width: 400px;
   display: flex;
   flex-direction: column;
@@ -271,14 +273,15 @@ body .box-home .v-menu {
   position: absolute;
   top: 0px;
   right: 1vw;
-  display: flex;
+  display: none;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: end;
   align-items: center;
   overflow: hidden;
 }
 body .box-home .v-menu .menu-list {
   transform: rotateZ(-90deg) translateY(100px);
+  margin-top: 12vw;
   padding-bottom: 8px;
   width: 10px;
   border-bottom: 3px solid #49a26f;
@@ -293,6 +296,50 @@ body .box-home .v-menu .menu-list {
 }
 body .box-home .v-menu .menu-list:hover {
   color: rgba(136, 136, 136, 0.9);
+}
+body .box-home .v-menu-2 {
+  height: 100vh;
+  width: 80px;
+  position: absolute;
+  top: 0px;
+  right: -15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+body .box-home .v-menu-2 .list-v-menu {
+  height: 24vh;
+  width: 25px;
+  cursor: pointer;
+  position: relative;
+  transform: translateX(100px);
+  transition: color 0.1s ease-in-out, transform 1s ease-in-out;
+}
+body .box-home .v-menu-2 .list-v-menu span {
+  color: rgba(136, 136, 136, 0.5);
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%) rotate(-90deg);
+  white-space: nowrap;
+  font-family: "Nunito", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+body .box-home .v-menu-2 .list-v-menu span:hover {
+  color: rgba(136, 136, 136, 0.9);
+}
+body .box-home .v-menu-2 .list-v-menu .dcr-ln {
+  background-color: #222;
+  height: 5px;
+  width: 20px;
+  position: absolute;
+  top: 70%;
+  left: 60%;
+  transform: translate(-50%) rotate(-90deg);
+  background-color: #49a26f;
+  border-radius: 20px;
 }
 body .box-home .container-info {
   height: 5px;
@@ -326,18 +373,19 @@ body .box-home .container-info #me {
 body .box-home .container-info #me .filter {
   background-image: url("../img/bg/profile_bg.jpg");
   background-repeat: no-repeat;
-  background-position-x: -200px;
+  background-position-x: center;
   background-size: cover;
   position: absolute;
+  top: 0;
   right: 0;
   height: 95%;
-  width: 35%;
+  width: 40%;
   filter: grayscale(1);
   box-shadow: inset 15px -10px 30px 40px rgb(30, 30, 30);
 }
 body .box-home .container-info #me .info-detail {
   height: 100%;
-  width: 65%;
+  width: 60%;
   padding: 10px 20px;
 }
 body .box-home .container-info #me .info-detail h2 {
@@ -449,7 +497,9 @@ body .box-home .container-info #workshop p {
 }
 body .box-home .container-info #workshop .cert-box {
   padding: 20px;
-  height: 80%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
   width: 100%;
   background-color: rgba(40, 40, 40, 0.95);
   margin-top: 15px;
@@ -460,7 +510,11 @@ body .box-home .container-info #workshop .cert-box {
 }
 body .box-home .container-info #workshop .cert-box .cert-card {
   width: 100%;
-  height: 30%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  padding: 8px;
+  margin-bottom: 15px;
   background-color: rgba(30, 30, 30, 0.95);
   border-radius: 8px;
   display: flex;
@@ -636,6 +690,79 @@ body .box-home .container-info #collabs .sendIt {
 body .box-home .container-info #collabs .sendIt:hover {
   opacity: 1;
   color: #fff;
+}
+body .box-home .container-info #project {
+  opacity: 0;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  display: none;
+  padding: 15px 25px;
+}
+body .box-home .container-info #project h2 {
+  font-family: "Lato", sans-serif;
+  color: #eee;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  font-size: 2rem;
+  margin: 15px;
+}
+body .box-home .container-info #project h2::after {
+  content: "";
+  display: block;
+  height: 5px;
+  width: 75px;
+  background-color: #49a26f;
+  transform: translateX(25%);
+  border-radius: 25px;
+}
+body .box-home .container-info #project p {
+  font-family: "Nunito", sans-serif;
+  color: #eee;
+  font-size: 1.2rem;
+  letter-spacing: 1.5px;
+}
+body .box-home .container-info #project p a {
+  text-decoration: none;
+  color: #fff;
+  font-style: italic;
+}
+body .box-home .container-info #project #prjct-container {
+  min-height: 60vh;
+  width: 100%;
+  background-color: rgba(40, 40, 40, 0.95);
+  margin-top: 15px;
+  border-radius: 12px;
+  padding: 25px;
+  display: flex;
+}
+body .box-home .container-info #project #prjct-container .prjct-itm {
+  height: 120px;
+  width: 100px;
+  margin: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+body .box-home .container-info #project #prjct-container .prjct-itm:hover {
+  background-color: rgba(102, 102, 102, 0.5);
+}
+body .box-home .container-info #project #prjct-container .prjct-itm img {
+  height: 80px;
+  width: 80px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+}
+body .box-home .container-info #project #prjct-container .prjct-itm iconify-icon {
+  font-size: 50px;
+  margin-bottom: 8px;
+}
+body .box-home .container-info #project #prjct-container .prjct-itm p {
+  font-size: 14px;
 }
 body .box-home .container-info .cls-btn {
   background-color: rgba(68, 68, 68, 0.2);

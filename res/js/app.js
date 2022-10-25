@@ -13,7 +13,8 @@ let brand = document.getElementById("brand");
 let findMeTXT = document.getElementById("subTitle");
 let socIcon = document.querySelectorAll(".soc-icon");
 let overlayBG = document.querySelector(".overlay");
-let menuList = document.querySelectorAll(".menu-list");
+// let menuList = document.querySelectorAll(".menu-list");
+let menuList = document.querySelectorAll(".list-v-menu");
 let contInfo = document.querySelector(".container-info");
 let lamp = document.querySelector(".lamp");
 let centerTextBox = document.querySelector(".text-center");
@@ -24,6 +25,8 @@ let wrkshp = document.getElementById("wrkshp");
 let wrkshpMenu = document.getElementById("workshop");
 let collabs = document.getElementById("clbs");
 let collabsMenu = document.getElementById("collabs");
+let prjct = document.getElementById("prjct");
+let projectMenu = document.getElementById("project");
 let github = document.getElementById("github");
 let linkedin = document.getElementById("linkedin");
 let instagram = document.getElementById("instagram");
@@ -87,19 +90,19 @@ function bulbStart() {
   }, 1700);
   setTimeout(() => {
     socIcon[0].classList.add("w-hover");
-    menuList[0].style.transform = "RotateZ(-90deg) TranslateY(0)";
+    menuList[0].style.transform = "TranslateX(0)";
   }, 1800);
   setTimeout(() => {
     socIcon[1].classList.add("w-hover");
-    menuList[1].style.transform = "RotateZ(-90deg) TranslateY(0)";
+    menuList[1].style.transform = "TranslateX(0)";
   }, 2000);
   setTimeout(() => {
     socIcon[2].classList.add("w-hover");
-    menuList[2].style.transform = "RotateZ(-90deg) TranslateY(0)";
+    menuList[2].style.transform = "TranslateX(0)";
   }, 2200);
   setTimeout(() => {
     socIcon[3].classList.add("w-hover");
-    menuList[3].style.transform = "RotateZ(-90deg) TranslateY(0)";
+    menuList[3].style.transform = "TranslateX(0)";
   }, 2400);
 }
 
@@ -112,7 +115,7 @@ function showText() {
 }
 
 function openCard() {
-  contInfo.style.width = viewPoint("50vw", "75vw", "100vw");
+  contInfo.style.width = viewPoint("80vw", "80vw", "100vw");
   setTimeout(() => {
     contInfo.style.height = "100vh";
     contInfo.style.top = "0";
@@ -147,6 +150,7 @@ function closeCard() {
   closeMee();
   closeWrkshop();
   closeCollabs();
+  closeProject();
   clsBtn.style.opacity = "0";
 }
 
@@ -192,6 +196,20 @@ function closeCollabs() {
   }, 500);
 }
 
+function openProject() {
+  projectMenu.style.display = "block";
+  setTimeout(() => {
+    projectMenu.style.opacity = "1";
+  }, 900);
+}
+
+function closeProject() {
+  projectMenu.style.opacity = "0";
+  setTimeout(() => {
+    projectMenu.style.display = "none";
+  }, 500);
+}
+
 function openLink(urlLink) {
   window.open(urlLink);
 }
@@ -222,6 +240,9 @@ wrkshp.addEventListener("click", () => {
 });
 collabs.addEventListener("click", () => {
   openCollabs();
+});
+prjct.addEventListener("click", () => {
+  openProject();
 });
 instagram.addEventListener("click", () => {
   openLink("https://instagram.com/_malik.ab.azz");
@@ -262,6 +283,12 @@ clickCert.forEach((e, i) => {
     }
   });
 });
+
+var openProjectPage = (id) => {
+  if (id == 1) {
+    window.open("pages/project/todo-apps/index.html", "_blank");
+  }
+}
 
 // Test
 // window.addEventListener('resize', ()=>{

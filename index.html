@@ -12,6 +12,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="res/img/favicon_io/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="res/img/favicon_io/favicon-16x16.png" />
   <link rel="manifest" href="res/img/favicon_io/site.webmanifest" />
+  <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
 </head>
 
 <body>
@@ -76,15 +77,14 @@
         </a>
       </div>
     </div>
-    <div class="v-menu">
-      <div class="menu-list" id="itsMe">IT'S ME</div>
-      <div class="menu-list" id="wrkshp">CERTIFICATE</div>
-      <div class="menu-list" id="project">PROJECT</div>
-      <div class="menu-list" id="clbs">COLLABS!</div>
+    <div class="v-menu-2">
+      <div class="list-v-menu" id="itsMe"><span>IT'S ME</span><div class="dcr-ln"></div></div>
+      <div class="list-v-menu" id="wrkshp"><span>CERTIFICATE</span><div class="dcr-ln"></div></div>
+      <div class="list-v-menu" id="prjct"><span>PROJECT</span><div class="dcr-ln"></div></div>
+      <div class="list-v-menu" id="clbs"><span>COLLABS!</span><div class="dcr-ln"></div></div>
     </div>
     <div class="container-info">
       <div id="me" class="info-box">
-        <div class="filter"></div>
         <div class="info-detail">
           <h2>Welcome to my page!</h2>
           <p>
@@ -126,7 +126,10 @@
             Regards, <br />
             Malik
           </p>
+          <div class="filter"></div>
+
         </div>
+
       </div>
       <div id="workshop" class="info-box">
         <h2>Certificate</h2>
@@ -198,6 +201,19 @@
           <a href="#" id="mailme">Email</a> me for quick respons!
         </p>
         <p>I can't wait! See you soon on our projects.</p>
+      </div>
+      <div id="project" class="info-box">
+        <h2>Showtime!!</h2>
+        <p>
+          Here is my several project that i can show to you. I hope you interest with that. Enjoy!
+        </p>
+        <div id="prjct-container">
+          <div class="prjct-itm" onclick="openProjectPage(1)">
+            <iconify-icon icon="flat-color-icons:todo-list"></iconify-icon>
+            <p>Todo App</p>
+          </div>
+        </div>
+
       </div>
       <div class="cls-btn">
         <span>CLOSE &RightArrowBar;</span>
