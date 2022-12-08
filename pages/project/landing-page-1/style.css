@@ -104,6 +104,7 @@ body {
     transform: translateX(100%);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     transition: all .3s ease-in-out;
+    display: none;
 }
 
 #side-menu.show-side-menu {
@@ -460,6 +461,10 @@ body {
     }
 
     #btn-side-menu {
+        display: block;
+    }
+
+    #side-menu {
         display: block;
     }
 

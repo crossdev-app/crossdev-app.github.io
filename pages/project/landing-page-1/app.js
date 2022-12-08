@@ -23,7 +23,7 @@ var sld = (x) => {
   }
 
   closeProduct();
-  toggleSideMenu();
+  $('#side-menu').removeClass('show-side-menu');
 };
 
 async function showProduct(id) {
