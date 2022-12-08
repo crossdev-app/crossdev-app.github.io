@@ -287,8 +287,10 @@ clickCert.forEach((e, i) => {
 var openProjectPage = (id) => {
   if (id == 1) {
     window.open("pages/project/todo-apps/index.html", "_blank");
+  } else if (id == 2) {
+    window.open("pages/project/landing-page-1/index.html", "_blank");
   }
-}
+};
 
 // Test
 // window.addEventListener('resize', ()=>{
