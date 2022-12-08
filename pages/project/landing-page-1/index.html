@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars Shop | Crossdev</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/res/img/favicon_io/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/res/img/favicon_io/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/res/img/favicon_io/favicon-16x16.png" />
+    <link rel="manifest" href="/res/img/favicon_io/site.webmanifest" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Montserrat&family=Nunito&family=Righteous&display=swap"
+        rel="stylesheet">
+
+    <!-- Iconify -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
+
+    <!-- splide -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide-core.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="nav" class="d-flex justify-content-between align-items-center px-5">
+        <h4 class="mb-0 f-display">Cars Shop</h4>
+        <div class="list-menu">
+            <a id="m-h" class="f-comfortaa menu-item m-actv" onclick="sld(0)">Home</a>
+            <a id="m-p" class="f-comfortaa menu-item" onclick="sld(100)">Product</a>
+            <a id="m-c" class="f-comfortaa menu-item" onclick="sld(200)">Contact Us</a>
+        </div>
+        <iconify-icon id="btn-side-menu" icon="gg:menu-right" onclick="toggleSideMenu()"></iconify-icon>
+        <div id="side-menu" class="">
+            <div class="p-2 d-flex justify-content-end">
+                <iconify-icon  icon="ic:round-close" style="cursor: pointer; font-size: 25px;" onclick="toggleSideMenu()"></iconify-icon>
+            </div>
+            <div id="sm-h" class="f-comfortaa smenu-item sm-actv" onclick="sld(0)">Home</div>
+            <div id="sm-p" class="f-comfortaa smenu-item" onclick="sld(100)">Product</div>
+            <div id="sm-c" class="f-comfortaa smenu-item" onclick="sld(200)">Contact Us</div>
+        </div>
+    </div>
+    <div id="main">
+        <section id="home">
+            <div id="card-home">
+                <h1 class="f-montserrat mb-1" style="color: whitesmoke;">Welcome,</h1>
+                <p class="f-nunito" style="color: whitesmoke;">Make your dream car come true!</p>
+                <p class="f-nunito" style="color: whitesmoke;">Lorem, ipsum dolor sit amet consectetur adipisicing
+                    elit. Illo necessitatibus quam, dicta sunt corrupti nam?</p>
+                <div id="btn-product" class="f-comfortaa mt-4" onclick="sld(100)">
+                    See our product <iconify-icon class="ml-2" icon="bytesize:arrow-right" style="margin-bottom: -3px;">
+                    </iconify-icon>
+                </div>
+            </div>
+        </section>
+
+        <section id="product">
+            <div id="box-product">
+                <div class="prod-item">
+                    <div class="prod-thumbnail" style="background-image: url('source/model-3.png');">
+                        <div class="fade-effect"></div>
+                    </div>
+                    <h5 class="f-nunito font-weight-bold ml-3 mb-0">Tesla 3</h5>
+                    <p class="ml-3 small text-muted"><span>&euro;&nbsp;120.0</span></p>
+                    <div class="btn-detail small mr-3" onclick="showProduct(0)">Detail</div>
+                </div>
+                <div class="prod-item">
+                    <div class="prod-thumbnail" style="background-image: url('source/model-s.png');">
+                        <div class="dscnt small" style="background-color: #a3a728;">&#128081; Best Seller!</div>
+                        <div class="fade-effect"></div>
+                    </div>
+                    <h5 class="f-nunito font-weight-bold ml-3 mb-0">Tesla S</h5>
+                    <p class="ml-3 small text-muted"><span>&euro;&nbsp;341.0</span></p>
+                    <div class="btn-detail small mr-3" onclick="showProduct(1)">Detail</div>
+                </div>
+                <div class="prod-item">
+                    <div class="prod-thumbnail" style="background-image: url('source/model-y.png');">
+                        <div class="fade-effect"></div>
+                    </div>
+                    <h5 class="f-nunito font-weight-bold ml-3 mb-0">Tesla Y</h5>
+                    <p class="ml-3 small text-muted"><span>&euro;&nbsp;233.0</span></p>
+                    <div class="btn-detail small mr-3" onclick="showProduct(2)">Detail</div>
+                </div>
+                <div class="prod-item">
+                    <div class="prod-thumbnail" style="background-image: url('source/model-x.png');">
+                        <div class="fade-effect"></div>
+                        <div class="dscnt small">10% OFF!</div>
+                    </div>
+                    <h5 class="f-nunito font-weight-bold ml-3 mb-0">Tesla X</h5>
+                    <p class="ml-3 small text-muted"><span class="coret">&euro;&nbsp;228.0</span><span
+                            class="text-success ml-2">&euro;&nbsp;205.2</span></p>
+                    <div class="btn-detail small mr-3" onclick="showProduct(3)">Detail</div>
+                </div>
+                <div id="prod-detail">
+                    <div id="detail-pict">
+                        <!-- M3 -->
+                        <section id="spl3" class="splide hide" aria-label="Basic Structure Example">
+                            <div class="splide__track">
+                                <ul class="splide__list">
+                                    <li class="splide__slide">
+                                        <img src="source/model-3/301.jpg" class="img-prod" />
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img src="source/model-3/302.jpg" class="img-prod" />
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img src="source/model-3/303.jpg" class="img-prod" />
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+                        <!-- MS -->
+                        <section id="splS" class="splide hide" aria-label="Basic Structure Example">
+                            <div class="splide__track">
+                                <ul class="splide__list">
+                                    <li class="splide__slide">
+                                        <img src="source/model-s/s01.jpg" class="img-prod" />
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img src="source/model-s/s02.jpg" class="img-prod" />
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img src="source/model-s/s03.jpg" class="img-prod" />
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+                        <!-- MY -->
+                        <section id="splY" class="splide hide" aria-label="Basic Structure Example">
+                            <div class="splide__track">
+                                <ul class="splide__list">
+                                    <li class="splide__slide">
+                                        <img src="source/model-y/y01.jpg" class="img-prod" />
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img src="source/model-y/y02.jpg" class="img-prod" />
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img src="source/model-y/y03.jpg" class="img-prod" />
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+                        <!-- MX -->
+                        <section id="splX" class="splide hide" aria-label="Basic Structure Example">
+                            <div class="splide__track">
+                                <ul class="splide__list">
+                                    <li class="splide__slide">
+                                        <img src="source/model-x/x01.jpg" class="img-prod" />
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img src="source/model-x/x02.jpg" class="img-prod" />
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img src="source/model-x/x03.jpg" class="img-prod" />
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+                    </div>
+                    <div id="detail-specs">
+                        <div id="ds-t" class="px-3 py-2" style="height: 120px;">
+                            <p id="ds-title" class="f-comfortaa">
+                                Lorem
+                            </p>
+                            <div class="d-flex justify-content-around">
+                                <div class="dst-mainspec d-flex flex-column align-items-center">
+                                    <div class="text-nowrap">
+                                        <iconify-icon class="dst-icon mr-2" icon="game-icons:path-distance">
+                                        </iconify-icon>
+                                        <span id="dst-range" class="dst-text"></span>mi
+                                    </div>
+                                    <span class="small text-nowrap">Range (est)</span>
+                                </div>
+                                <div class="dst-mainspec d-flex flex-column align-items-center">
+                                    <div class="text-nowrap">
+                                        <iconify-icon class="dst-icon" icon="ic:sharp-speed"></iconify-icon> <span
+                                            id="dst-ts" class="dst-text"></span>mph
+                                    </div>
+                                    <span class="small text-nowrap">Top Speed</span>
+                                </div>
+                                <div class="dst-mainspec d-flex flex-column align-items-center">
+                                    <div class="text-nowrap">
+                                        <iconify-icon class="dst-icon" icon="radix-icons:lap-timer"></iconify-icon>
+                                        <span id="dst-tts" class="dst-text"></span>sec
+                                    </div>
+                                    <span class="small text-nowrap">0-60mph</span>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="my-1">
+                        <div id="ds-m">
+                            <div class="accordion" id="specAccordion">
+                                <div class="p-3">
+                                    <div class="d-flex justify-content-between align-items-center" id="headingOne"
+                                        data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                                        aria-controls="collapseOne" style="cursor: pointer;">
+                                        <span class="f-montserrat">Range and Performance</span>
+                                        <iconify-icon icon="material-symbols:keyboard-arrow-down-rounded" class="arrd">
+                                        </iconify-icon>
+                                        <iconify-icon icon="material-symbols:keyboard-arrow-up-rounded"
+                                            class="arru hide"></iconify-icon>
+                                    </div>
+
+                                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                                        data-parent="#specAccordion">
+                                        <div class="card-body">
+                                            <div id="spc-r-3" class="spc-r hide">
+                                                <div class="d-flex justify-content-between">
+                                                    <span class="font-weight-bold small">
+                                                        Acceleration 0-60 mph
+                                                    </span>
+                                                    <span class="text-muted small">
+                                                        5.8 sec
+                                                    </span>
+                                                </div>
+                                                <div class="d-flex justify-content-between">
+                                                    <span class="font-weight-bold small">
+                                                        Range
+                                                    </span>
+                                                    <span class="text-muted small">
+                                                        267 - 272 miles
+                                                    </span>
+                                                </div>
+                                                <div class="d-flex justify-content-between">
+                                                    <span class="font-weight-bold small">
+                                                        Top Speed
+                                                    </span>
+                                                    <span class="text-muted small">
+                                                        140 mph
+                                                    </span>
+                                                </div>
+                                                <div class="d-flex justify-content-between">
+                                                    <span class="font-weight-bold small">
+                                                        Drivetrain
+                                                    </span>
+                                                    <span class="text-muted small">
+                                                        Rear-Wheel Drive
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div id="spc-r-s" class="spc-r hide">
+                                                <div class="d-flex justify-content-between">
+                                                    <span class="font-weight-bold small">
+                                                        Acceleration 0-60 mph
+                                                    </span>
+                                                    <span class="text-muted small">
+                                                        3.1 sec
+                                                    </span>
+                                                </div>
+                                                <div class="d-flex justify-content-between">
+                                                    <span class="font-weight-bold small">
+                                                        Range
+                                                    </span>
+                                                    <span class="text-muted small">
+                                                        375 - 405 miles
+                                                    </span>
+                                                </div>
+                                                <div class="d-flex justify-content-between">
+                                                    <span class="font-weight-bold small">
+                                                        Top Speed
+                                                    </span>
+                                                    <span class="text-muted small">
+                                                        149 mph
+                                                    </span>
+                                                </div>
+                                                <div class="d-flex justify-content-between">
+                                                    <span class="font-weight-bold small">
+                                                        Drivetrain
+                                                    </span>
+                                                    <span class="text-muted small">
+                                                        Dual All-Wheel Drive
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div id="spc-r-y" class="spc-r hide">
+                                                <div class="d-flex justify-content-between">
+                                                    <span class="font-weight-bold small">
+                                                        Acceleration 0-60 mph
+                                                    </span>
+                                                    <span class="text-muted small">
+                                                        4.8 sec
+                                                    </span>
+                                                </div>
+                                                <div class="d-flex justify-content-between">
+                                                    <span class="font-weight-bold small">
+                                                        Range
+                                                    </span>
+                                                    <span class="text-muted small">
+                                                        314 - 330 miles
+                                                    </span>
+                                                </div>
+                                                <div class="d-flex justify-content-between">
+                                                    <span class="font-weight-bold small">
+                                                        Top Speed
+                                                    </span>
+                                                    <span class="text-muted small">
+                                                        135 mph
+                                                    </span>
+                                                </div>
+                                                <div class="d-flex justify-content-between">
+                                                    <span class="font-weight-bold small">
+                                                        Drivetrain
+                                                    </span>
+                                                    <span class="text-muted small">
+                                                        Dual All-Wheel Drive
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div id="spc-r-x" class="spc-r hide">
+                                                <div class="d-flex justify-content-between">
+                                                    <span class="font-weight-bold small">
+                                                        Acceleration 0-60 mph
+                                                    </span>
+                                                    <span class="text-muted small">
+                                                        3.8 sec
+                                                    </span>
+                                                </div>
+                                                <div class="d-flex justify-content-between">
+                                                    <span class="font-weight-bold small">
+                                                        Range
+                                                    </span>
+                                                    <span class="text-muted small">
+                                                        329 - 351 miles
+                                                    </span>
+                                                </div>
+                                                <div class="d-flex justify-content-between">
+                                                    <span class="font-weight-bold small">
+                                                        Top Speed
+                                                    </span>
+                                                    <span class="text-muted small">
+                                                        149 mph
+                                                    </span>
+                                                </div>
+                                                <div class="d-flex justify-content-between">
+                                                    <span class="font-weight-bold small">
+                                                        Drivetrain
+                                                    </span>
+                                                    <span class="text-muted small">
+                                                        Dual All-Wheel Drive
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="my-3"></div>
+                                            <span class="font-weight-bold small">
+                                                Powerfull Efficiency
+                                            </span><br>
+                                            <span id="spc-r2-3" class="spc-r2 text-muted small hide">
+                                                Tesla designed Model 3 from the ground-up as an electric vehicle using
+                                                system-level integration throughout. Each component, including
+                                                batteries, motors and even exterior aerodynamics are optimized to
+                                                benefit from one another and create one of the most efficient, yet
+                                                unbelievably powerful vehicles ever built. <br>
+                                                *With first foot of rollout subtracted.
+                                            </span>
+                                            <span id="spc-r2-s" class="spc-r2 text-muted small hide">
+                                                Tesla designed Model S from the ground-up as an electric vehicle — each
+                                                component, including batteries, motors and exterior aerodynamics are
+                                                optimized to benefit from one another and create one of the most
+                                                efficient, yet unbelievably powerful vehicles ever built. <br>
+                                                *With first foot of rollout subtracted. <br>
+                                                The indicated Plaid top speed requires paid hardware upgrades.
+                                            </span>
+                                            <span id="spc-r2-y" class="spc-r2 text-muted small hide">
+                                                Tesla designed Model Y from the ground-up as an electric vehicle using
+                                                system-level integration throughout. Each component, including
+                                                batteries, motors and even exterior aerodynamics are optimized to
+                                                benefit from one another and create one of the most efficient, yet
+                                                unbelievably powerful vehicles ever built. <br>
+                                                *With first foot of rollout subtracted.
+                                            </span>
+                                            <span id="spc-r2-x" class="spc-r2 text-muted small hide">
+                                                Tesla designed Model X from the ground-up as an electric vehicle — each
+                                                component, including batteries, motors and exterior aerodynamics are
+                                                optimized to benefit from one another and create one of the most
+                                                efficient, yet unbelievably powerful vehicles ever built. <br>
+                                                *With first foot of rollout subtracted.
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="d-flex justify-content-between align-items-center" id="headingTwo"
+                                        data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                                        aria-controls="collapseTwo" style="cursor: pointer;">
+                                        <span class="f-montserrat">Interior and Convenience</span>
+                                        <iconify-icon icon="material-symbols:keyboard-arrow-down-rounded" class="arrd">
+                                        </iconify-icon>
+                                        <iconify-icon icon="material-symbols:keyboard-arrow-up-rounded"
+                                            class="arru hide"></iconify-icon>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                        data-parent="#specAccordion">
+                                        <div class="card-body">
+                                            <div id="spc-ic-x" class="spc-ic hide">
+                                                <p class="mb-0 font-weight-bold small">
+                                                    Sound System
+                                                </p>
+                                                <ul id="spc-a-3" class="ml-4 text-muted small">
+                                                    <li>Custom Audio with immersive sound</li>
+                                                </ul>
+                                                <p class="mb-0 font-weight-bold small">
+                                                    Interior Floor Mats
+                                                </p>
+                                                <ul id="spc-a-3" class="ml-4 text-muted small">
+                                                    <li>Available accessory</li>
+                                                </ul>
+                                                <p class="mb-0 font-weight-bold small">
+                                                    Included
+                                                </p>
+                                                <ul id="spc-a-3" class="ml-4 text-muted small">
+                                                    <li>Music and media over Bluetooth®</li>
+                                                    <li>Tinted glass roof with ultraviolet and infrared protection</li>
+                                                    <li>Auto dimming, power folding, heated side mirrors</li>
+                                                    <li>Custom driver profiles</li>
+                                                    <li>Wireless phone charging in center console</li>
+                                                    <li>23 cubic feet of cargo space including a secure front trunk</li>
+                                                    <li>Heated Seats - All 5 seats with individual controls</li>
+                                                    <li>Heated Steering Wheel</li>
+                                                </ul>
+                                            </div>
+                                            <div id="spc-ic" class="spc-ic hide">
+                                                <p class="mb-0 font-weight-bold small">
+                                                    Audio and Media
+                                                </p>
+                                                <ul id="spc-a-s" class="spc-icd ml-4 text-muted small hide">
+                                                    <li>Premium 22-speaker audio with Active Road Noise Reduction</li>
+                                                    <li>Multi-device music and media over Bluetooth®</li>
+                                                    <li>FM Radio, SiriusXM and Internet Streaming Radio</li>
+                                                    <li>Tilting 17” center display, 12.3” driver's display, and 8”
+                                                        second row display</li>
+                                                    <li>Gaming computer with 10 teraflops of processing power</li>
+                                                    <li>Wireless controller compatibility</li>
+                                                </ul>
+                                                <ul id="spc-a-y" class="spc-icd ml-4 text-muted small hide">
+                                                    <li>Premium audio - 13 speakers, 1 subwoofer, 2 amps, and immersive
+                                                        sound</li>
+                                                    <li>Music and media over Bluetooth®</li>
+                                                    <li>USB-A port in the glovebox with a 128GB portable storage device
+                                                        included</li>
+                                                </ul>
+                                                <ul id="spc-a-x" class="spc-icd ml-4 text-muted small hide">
+                                                    <li>Premium 22-speaker audio with active noise cancelling</li>
+                                                    <li>Multi-device music and media over Bluetooth® </li>
+                                                    <li>FM Radio, SiriusXM and Internet Streaming Radio</li>
+                                                    <li>Tilting 17” center display, 12.3” driver's display, and 8”
+                                                        second row display</li>
+                                                    <li>Gaming computer with 10 teraflops of processing power</li>
+                                                    <li>Wireless controller compatibility</li>
+                                                </ul>
+                                                <p class="mb-0 font-weight-bold small">
+                                                    Comfort
+                                                </p>
+                                                <ul id="spc-com-s" class="spc-icd ml-4 text-muted small hide">
+                                                    <li>Heated seats for every passenger, heated steering and heated
+                                                        windshield</li>
+                                                    <li>Ventilated front seating</li>
+                                                    <li>Tri-zone Airwave cabin conditioning </li>
+                                                    <li>HEPA air filtration system</li>
+                                                    <li>Custom driver profiles with automatic easy-entry and exit</li>
+                                                    <li>Ambient lighting</li>
+                                                    <li>Tinted glass roof</li>
+                                                    <li>Ultraviolet and infrared protection on all glass</li>
+                                                </ul>
+                                                <ul id="spc-com-y" class="spc-icd ml-4 text-muted small hide">
+                                                    <li>Power adjustable front seats</li>
+                                                    <li>Heated front and rear seats</li>
+                                                    <li>Heated steering wheel</li>
+                                                    <li>HEPA air filtration system</li>
+                                                    <li>Tinted glass roof with ultraviolet and infrared protection</li>
+                                                    <li>Independent flat-fold rear seats</li>
+                                                    <li>Interior floor mats</li>
+                                                </ul>
+                                                <ul id="spc-com-x" class="spc-icd ml-4 text-muted small hide">
+                                                    <li>Panoramic windshield</li>
+                                                    <li>Ultraviolet and infrared protection on all glass</li>
+                                                    <li>Heated seats for every passenger, heated steering and heated
+                                                        windshield</li>
+                                                    <li>Ventilated front seating</li>
+                                                    <li>Tri-zone Airwave cabin conditioning </li>
+                                                    <li>HEPA air filtration system</li>
+                                                    <li>Custom driver profiles with automatic easy-entry and exit</li>
+                                                    <li>Ambient lighting</li>
+                                                </ul>
+                                                <p class="mb-0 font-weight-bold small">
+                                                    Convenience
+                                                </p>
+                                                <ul id="spc-con-s" class="spc-icd ml-4 text-muted small hide">
+                                                    <li>Front center console with sliding cup holders and storage</li>
+                                                    <li>Second row stowable center armrest with integrated storage and
+                                                        wireless charging</li>
+                                                    <li>Automatic opening and closing rear liftgate</li>
+                                                    <li>Auto dimming, power folding, heated side mirrors</li>
+                                                    <li>28 ft³ of cargo space and secure front trunk</li>
+                                                    <li>Wireless and USB-C fast charging for every passenger</li>
+                                                    <li>Location-aware automatic garage door opener</li>
+                                                    <li>Phone Key</li>
+                                                </ul>
+                                                <ul id="spc-con-y" class="spc-icd ml-4 text-muted small hide">
+                                                    <li>LED fog lamps</li>
+                                                    <li>Power folding, auto-dimming, heated side mirrors</li>
+                                                    <li>Custom driver profiles</li>
+                                                    <li>Center console with storage, 4 USB-C ports and wireless charging
+                                                        for 2 smartphones</li>
+                                                </ul>
+                                                <ul id="spc-con-x" class="spc-icd ml-4 text-muted small hide">
+                                                    <li>Automatic opening and closing front doors</li>
+                                                    <li>Front center console with sliding cup holders and storage</li>
+                                                    <li>Automatic opening and closing rear liftgate</li>
+                                                    <li>Auto dimming, power folding, heated side mirrors</li>
+                                                    <li>92 ft³ of cargo space including a secure front trunk </li>
+                                                    <li>Wireless and USB-C fast charging </li>
+                                                    <li>Location-aware automatic garage door opener</li>
+                                                    <li>Phone Key</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="d-flex justify-content-between align-items-center" id="headingThree"
+                                        data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree" style="cursor: pointer;">
+                                        <span class="f-montserrat">Safety</span>
+                                        <iconify-icon icon="material-symbols:keyboard-arrow-down-rounded" class="arrd">
+                                        </iconify-icon>
+                                        <iconify-icon icon="material-symbols:keyboard-arrow-up-rounded"
+                                            class="arru hide"></iconify-icon>
+                                    </div>
+                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                        data-parent="#specAccordion">
+                                        <div class="card-body">
+                                            <ul class="ml-4 text-muted small">
+                                                <li>Automatic emergency braking</li>
+                                                <li>Blind spot monitoring</li>
+                                                <li>Front collision warning</li>
+                                                <li>Side collision warning</li>
+                                                <li>Emergency lane departure avoidance and correction</li>
+                                                <li>Obstacle aware acceleration</li>
+                                                <li>LED daytime running lights</li>
+                                                <li>Sentry Mode</li>
+                                                <li>Cabin Overheat Protection</li>
+                                                <li>In-app vehicle location monitoring</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="ds-b" class="d-flex justify-content-center align-items-center">
+                            <div id="ds-btn-add-cart" class="c-btn">
+                                <iconify-icon class="mr-2" icon="bi:cart"></iconify-icon>
+                                <span class="f-nunito">Order</span>
+                            </div>
+                            <div id="ds-btn-close" class="c-btn" onclick="closeProduct()">
+                                <iconify-icon class="mr-2" icon="eva:close-fill"></iconify-icon>
+                                <span class="f-nunito">Close</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact-us">
+            <div id="form-order" class="mx-3">
+                <h4 class="f-montserrat text-center">One step closer to own your dream cars!</h4>
+                <p class="text-muted small text-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex,
+                    ea!</p>
+                <form action="#" class="p-3">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label class="small" for="input-fname">First Name</label>
+                            <input oninput="check_form()" type="text" class="form-control form-control-sm"
+                                id="input-fname" placeholder="Jhon">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="small" for="input-lname">Last Name</label>
+                            <input type="text" oninput="check_form()" class="form-control form-control-sm"
+                                id="input-lname" placeholder="Doe">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label class="small" for="input-email">Email</label>
+                            <input type="email" class="form-control form-control-sm" id="input-email"
+                                placeholder="jhon.doe@example.com">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="small" for="input-pnum">Phone Number</label>
+                            <input type="text" oninput="check_form()" class="form-control form-control-sm"
+                                id="input-pnum" placeholder="08123456789">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="small" for="inputAddress">Address</label>
+                        <input type="text" oninput="check_form()" class="form-control form-control-sm" id="inputAddress"
+                            placeholder="1234 Main St">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label class="small" for="inputCity">City</label>
+                            <input type="text" oninput="check_form()" class="form-control form-control-sm"
+                                id="inputCity">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label class="small" for="inputState">State</label>
+                            <select onchange="check_form()" id="inputState" class="form-control form-control-sm">
+                                <option value="0" selected>Choose...</option>
+                                <option value="1">...</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label class="small" for="inputZip">Zip</label>
+                            <input type="text" oninput="check_form()" class="form-control form-control-sm"
+                                id="inputZip">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <label class="small" for="inputProduct">Product</label>
+                            <select onchange="check_form()" id="inputProduct" class="form-control form-control-sm">
+                                <option value="0" selected>-- Select Car Type --</option>
+                                <option value="1">...</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div type="button" id="btn-buy" class="btn-buy-dissable small">
+                        <iconify-icon class="icon-buy" icon="ph:shopping-cart-light"></iconify-icon>&nbsp;Buy
+                    </div>
+                </form>
+
+            </div>
+
+        </section>
+    </div>
+    <div id="footer" class="text-center f-montserrat">
+        made with <iconify-icon icon="emojione:fire"></iconify-icon> by <span id="gtp"
+            class="font-weight-bold">crossdev</span>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="img_slider_config.js"></script>
+</body>
+
+</html>
