@@ -289,6 +289,8 @@ var openProjectPage = (id) => {
     window.open("pages/project/todo-apps/index.html", "_blank");
   } else if (id == 2) {
     window.open("pages/project/landing-page-1/index.html", "_blank");
+  } else if (id == 3) {
+    window.open("https://crossdev-app-dashboard-react.netlify.app/", "_blank");
   }
 };
 
